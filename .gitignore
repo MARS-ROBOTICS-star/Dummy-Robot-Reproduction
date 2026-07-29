@@ -1,0 +1,44 @@
+# STM32CubeIDE derived output
+Debug/
+Release/
+.settings/
+.metadata/
+*.launch
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Host-test output and captured raw data
+learning/m1-embedded/tests/build/
+learning/m1-embedded/**/captures/*.sal
+learning/m1-embedded/**/captures/*.vcd
+
+# Operating systems and editors
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# CAD/EDA transient and backup files (source assets remain tracked)
+*.bak
+*.bak~
+*.lck
+*.tmp
+*.autosave
+
+# Secrets and machine-local settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Local logs (formal records under docs/reproduction remain tracked)
+*.log
