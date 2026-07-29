@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "source_root_hint": "../Dummy-Robot",
+  "canonical_url": "https://github.com/peng-zhihui/Dummy-Robot.git",
+  "checkout_url": "https://github.com/MARS-ROBOTICS-star/Dummy-Robot.git",
+  "checkout_commit": "09fb3f43bb94c60a46012809c9f58c4e2a7d2405",
+  "asset_roots": [
+    "0.SubModules",
+    "1.Hardware",
+    "2.Firmware",
+    "3.Software",
+    "4.Model",
+    "5.Docs"
+  ]
+}
