@@ -10,6 +10,22 @@
 
 三者不得互相替代。未验证的推断保持为 `inference` 或 `unknown`，不能写成 V0 事实。
 
+## 母本引用
+
+母本和复现仓库采用相邻目录，默认从复现仓库以 `../Dummy-Robot` 访问只读母本。正式记录不写 `/home/...` 等本机绝对路径，而使用：
+
+```text
+upstream:<relative-posix-path>
+```
+
+例如：
+
+```text
+upstream:2.Firmware/Core-STM32F4-fw/Robot/instances/dummy_robot.cpp
+```
+
+M0 的 `source-lock.json` 保存母本规范 URL、实际 checkout URL、完整提交 SHA 和参与清单的资产根。母本资产根存在未提交修改时，不得生成正式清单。
+
 ## 实验与数据命名
 
 实验记录使用 `YYYY-MM-DD-<milestone>-<topic>.md`，例如 `2026-08-01-m1-can-loopback.md`。原始数据与记录同名并保留可识别扩展名，例如 `2026-08-01-m1-can-loopback.csv`、`2026-08-01-m1-can-loopback.png`。名称使用小写 ASCII、连字符分词，不使用“final”“new”等不可追溯词。

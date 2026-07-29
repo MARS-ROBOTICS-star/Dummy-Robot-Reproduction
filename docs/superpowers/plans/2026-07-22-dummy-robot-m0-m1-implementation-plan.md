@@ -4,13 +4,16 @@
 
 **Goal:** 建立可审计的 Dummy Robot V0 数字基线，并让两块 STM32F103 开发板通过实体 CAN 总线以 100 Hz 交换“目标角度/当前角度”，形成从读项目、读数据手册、写最小固件到仪器验收的第一个完整工程闭环。
 
-**Architecture:** M0 只读原仓库的机械、硬件和固件资产，把“原始证据、工程推断、未知项”分开记录。M1 使用两块 NUCLEO-F103RB：节点 A 模拟 REF，产生目标角度并记录反馈；节点 B 模拟关节控制器，用限速模型生成当前角度。两节点经 SN65HVD230 实体 CAN 总线连接；GPIO/UART、PWM、ADC/DMA、SPI/MT6816 分别以独立最小工程学习，最后在 CAN 工程集成协议、日志和验收脚本。
+**Architecture:** 母本仓库和复现仓库保持为相邻、独立的 Git 仓库。M0 工具从显式指定的只读 `SOURCE_ROOT` 读取机械、硬件和固件资产，把“原始证据、工程推断、未知项”分开记录，并用 `source-lock.json` 固定来源 URL、提交和资产根目录；所有自产成果写入复现仓库。M1 使用两块 NUCLEO-F103RB：节点 A 模拟 REF，产生目标角度并记录反馈；节点 B 模拟关节控制器，用限速模型生成当前角度。两节点经 SN65HVD230 实体 CAN 总线连接；GPIO/UART、PWM、ADC/DMA、SPI/MT6816 分别以独立最小工程学习，最后在 CAN 工程集成协议、日志和验收脚本。
 
 **Tech Stack:** Git、Markdown/CSV、Python 3.10+ 标准库、GCC、FreeCAD 1.0+ 或已有 STEP/CAD 工具、STM32CubeMX 6.18.0、STM32CubeIDE 2.2.0 Eclipse 版、STM32CubeF1 1.8.0、STM32 HAL、NUCLEO-F103RB、SN65HVD230、MT6816、USB 串口、数字万用表、逻辑分析仪。
 
 **Global Constraints:**
 
-- M0–M1 不修改 `0.SubModules/` 至 `5.Docs/` 内的母本文件；根目录仅允许项目治理文件 `README.md`、`CONTRIBUTING.md` 和 `.gitignore`，其余新成果进入 `docs/reproduction/`、`learning/m1-embedded/` 和 `tools/reproduction/`。
+- 母本仓库与复现仓库必须分离；默认布局为复现仓库的 `SOURCE_ROOT=../Dummy-Robot`。任何工具都不得向 `SOURCE_ROOT` 写入文件。
+- 复现仓库根目录仅保存项目治理文件 `README.md`、`CONTRIBUTING.md` 和 `.gitignore`；规格与计划进入 `docs/superpowers/`，其余新成果进入 `docs/reproduction/`、`learning/m1-embedded/` 和 `tools/reproduction/`。
+- 所有母本引用使用 `upstream:<relative-posix-path>`，例如 `upstream:2.Firmware/Core-STM32F4-fw/Robot/instances/dummy_robot.cpp`；不得提交本机绝对路径。
+- M0 工具必须同时接受显式 `--project-root` 和 `--source-root`，并在读取前验证 `SOURCE_ROOT` 是 Git 仓库、六个资产根存在且这些资产根没有未提交修改。
 - 只使用 USB/3.3 V/5 V 安全低压；本阶段不连接电机、24 V 电源、TB67H450 功率级或谐波减速器。
 - 每个结论都标注 `evidence`（源文件/测量）、`inference`（基于证据的推断）或 `unknown`（尚需验证），不把推断写成原版事实。
 - 每个实验必须先写预期和接线，后上电；任何改线都先断开 USB。
@@ -28,6 +31,11 @@
 .gitignore
 README.md
 CONTRIBUTING.md
+docs/superpowers/
+├── specs/
+│   └── 2026-07-22-dummy-robot-reproduction-design.md
+└── plans/
+    └── 2026-07-22-dummy-robot-m0-m1-implementation-plan.md
 docs/reproduction/
 ├── README.md
 ├── templates/
@@ -37,6 +45,7 @@ docs/reproduction/
 │   ├── decision-log.md
 │   └── failure-log.md
 ├── m0/
+│   ├── source-lock.json
 │   ├── repository-inventory.csv
 │   ├── assembly-tree.csv
 │   ├── joint-parameters.csv
@@ -89,6 +98,25 @@ tools/reproduction/
 ```
 
 CubeMX 自动生成的 `Core/`、`Drivers/`、启动文件、链接脚本和 `.ioc` 均随对应实验工程提交；`Debug/`、`Release/`、`.settings/` 等派生构建目录不提交。
+
+## Repository and Source Layout
+
+默认工作区布局：
+
+```text
+<workspace>/
+├── Dummy-Robot/                 # SOURCE_ROOT：母本，只读
+└── Dummy-Robot-Reproduction/    # PROJECT_ROOT：本项目，可写
+```
+
+执行 M0 命令时始终从 `Dummy-Robot-Reproduction/` 运行：
+
+```bash
+PROJECT_ROOT=.
+SOURCE_ROOT=../Dummy-Robot
+```
+
+`source-lock.json` 不记录 `/home/...` 等本机绝对路径，只记录相对布局提示、母本规范 URL、实际 checkout URL、完整提交 SHA 和六个资产根。若母本资产根存在未提交修改，清单生成必须失败；母本仓库其他目录的本项目旧文档不参与资产清单。
 
 ## Fixed M1 Hardware and Interfaces
 
@@ -162,11 +190,15 @@ CAN 本身已有链路层 CRC；这里的 XOR 不是安全机制，只用于练�
 **Files:**
 
 - Create: `.gitignore`
+- Create: `README.md`
+- Create: `CONTRIBUTING.md`
 - Create: `docs/reproduction/README.md`
 - Create: `docs/reproduction/templates/experiment-record.md`
 - Create: `docs/reproduction/templates/review-checklist.md`
 - Create: `docs/reproduction/logs/decision-log.md`
 - Create: `docs/reproduction/logs/failure-log.md`
+- Retain: `docs/superpowers/specs/2026-07-22-dummy-robot-reproduction-design.md`
+- Retain: `docs/superpowers/plans/2026-07-22-dummy-robot-m0-m1-implementation-plan.md`
 
 - [ ] **Step 1: Confirm a clean starting point**
 
@@ -177,7 +209,7 @@ git status --short
 git log -1 --oneline
 ```
 
-Expected: only the plan/spec edits for this planning commit are present before implementation begins.
+Expected for the empty-repository bootstrap: only the copied plan/spec files are untracked before the remaining Task 1 files are created.
 
 - [ ] **Step 2: Add ignore rules for generated work**
 
@@ -252,8 +284,8 @@ Expected: all `test` commands exit 0; `rg` finds the four concepts.
 - [ ] **Step 6: Commit**
 
 ```bash
-git add .gitignore docs/reproduction
-git commit -m "docs: scaffold reproduction engineering records"
+git add .gitignore README.md CONTRIBUTING.md docs/reproduction docs/superpowers
+git commit -m "docs(project): establish engineering workspace"
 ```
 
 ## Task 2: Build a Reproducible Repository Inventory
@@ -261,12 +293,22 @@ git commit -m "docs: scaffold reproduction engineering records"
 **Files:**
 
 - Create: `tools/reproduction/inventory.py`
+- Create: `tools/reproduction/test_inventory.py`
+- Create: `docs/reproduction/m0/source-lock.json`
 - Create: `docs/reproduction/m0/repository-inventory.csv`
-- Test: `tools/reproduction/test_inventory.py`
+- Create: `docs/reproduction/m0/unknowns-and-risks.md`
 
 - [ ] **Step 1: Write the failing inventory test**
 
-The test creates a temporary tree and asserts that inventory rows contain `path,top_level,extension,size_bytes,sha256`, use repository-relative POSIX paths, are sorted by path, and produce a 64-character SHA-256.
+The test creates separate temporary project/source trees and asserts that:
+
+- inventory rows contain `path,top_level,extension,size_bytes,sha256`;
+- `path` is relative to the source root, uses POSIX separators and is sorted;
+- hashes contain 64 lowercase hexadecimal characters;
+- only the six allowed source roots are scanned;
+- production output and lock files are written under the project root; explicit test outputs may use a temporary directory, but no output may resolve inside the source root;
+- a missing root, non-Git source or dirty asset root produces a nonzero exit;
+- the lock contains stable keys and no absolute local path.
 
 Run:
 
@@ -280,11 +322,16 @@ Expected before implementation: failure because `tools.reproduction.inventory` d
 
 Requirements:
 
-- walk only `0.SubModules`, `1.Hardware`, `2.Firmware`, `3.Software`, `4.Model`, `5.Docs`;
+- accept `--project-root`, `--source-root`, `--output`, `--lock-output` and `--canonical-url`;
+- resolve the roots independently and reject identical or nested project/source roots;
+- verify the source root is a Git checkout and its six asset roots are clean;
+- walk only source-root paths `0.SubModules`, `1.Hardware`, `2.Firmware`, `3.Software`, `4.Model`, `5.Docs`;
 - skip `.git`, build directories and binary contents inspection;
 - hash every file in 1 MiB chunks;
-- emit UTF-8 CSV sorted by relative path;
-- accept `--root` and `--output` arguments;
+- emit UTF-8 CSV sorted by source-relative path;
+- emit deterministic UTF-8 JSON containing `schema_version`, `source_root_hint`, `canonical_url`, `checkout_url`, `checkout_commit` and `asset_roots`;
+- reject checkout URLs containing embedded credentials;
+- reject any output path that resolves inside the source root; normal committed outputs stay beneath the project root, while reproducibility checks may use an explicit temporary path;
 - exit nonzero if any of the six expected roots is missing.
 
 - [ ] **Step 3: Make the unit test pass**
@@ -295,18 +342,38 @@ Run:
 python3 -m unittest tools.reproduction.test_inventory -v
 ```
 
-Expected: one or more tests report `OK`.
+Expected: all inventory and source-lock tests report `OK`.
 
-- [ ] **Step 4: Generate and inspect the real inventory**
+- [ ] **Step 4: Verify the real source checkout before generation**
+
+Run from the reproduction repository:
 
 ```bash
-python3 tools/reproduction/inventory.py --root . --output docs/reproduction/m0/repository-inventory.csv
-python3 -c "import csv; p='docs/reproduction/m0/repository-inventory.csv'; r=list(csv.DictReader(open(p, encoding='utf-8'))); print(len(r), sorted({x['top_level'] for x in r}))"
+PROJECT_ROOT=.
+SOURCE_ROOT=../Dummy-Robot
+git -C "$SOURCE_ROOT" rev-parse --show-toplevel
+git -C "$SOURCE_ROOT" rev-parse HEAD
+git -C "$SOURCE_ROOT" status --short -- 0.SubModules 1.Hardware 2.Firmware 3.Software 4.Model 5.Docs
 ```
 
-Expected: a nonzero file count and all six source roots in the printed set.
+Expected: the first two commands print the mother-repository path and a full commit SHA; the scoped status command prints nothing.
 
-- [ ] **Step 5: Record the important negative findings**
+- [ ] **Step 5: Generate and inspect the real inventory**
+
+```bash
+python3 tools/reproduction/inventory.py \
+  --project-root . \
+  --source-root ../Dummy-Robot \
+  --output docs/reproduction/m0/repository-inventory.csv \
+  --lock-output docs/reproduction/m0/source-lock.json \
+  --canonical-url https://github.com/peng-zhihui/Dummy-Robot.git
+python3 -c "import csv; p='docs/reproduction/m0/repository-inventory.csv'; r=list(csv.DictReader(open(p, encoding='utf-8'))); print(len(r), sorted({x['top_level'] for x in r}))"
+python3 -m json.tool docs/reproduction/m0/source-lock.json
+```
+
+Expected: a nonzero file count, all six source roots in the printed set, valid JSON, a 40-character `checkout_commit`, and no `/home/` path.
+
+- [ ] **Step 6: Record the important negative findings**
 
 In `docs/reproduction/m0/unknowns-and-risks.md`, record with inventory evidence:
 
@@ -316,10 +383,19 @@ In `docs/reproduction/m0/unknowns-and-risks.md`, record with inventory evidence:
 - Peak working tree is not initialized;
 - dynamics and the 200 Hz trajectory path are not complete capabilities.
 
-- [ ] **Step 6: Commit**
+- [ ] **Step 7: Verify reproducibility and commit**
 
 ```bash
-git add tools/reproduction docs/reproduction/m0/repository-inventory.csv docs/reproduction/m0/unknowns-and-risks.md
+python3 tools/reproduction/inventory.py \
+  --project-root . \
+  --source-root ../Dummy-Robot \
+  --output /tmp/dummy-repository-inventory.csv \
+  --lock-output /tmp/dummy-source-lock.json \
+  --canonical-url https://github.com/peng-zhihui/Dummy-Robot.git
+cmp /tmp/dummy-repository-inventory.csv docs/reproduction/m0/repository-inventory.csv
+cmp /tmp/dummy-source-lock.json docs/reproduction/m0/source-lock.json
+git diff --check
+git add tools/reproduction docs/reproduction/m0
 git commit -m "tools: inventory Dummy Robot source assets"
 ```
 
@@ -334,7 +410,7 @@ git commit -m "tools: inventory Dummy Robot source assets"
 
 - [ ] **Step 1: Open the source model without altering it**
 
-Open `4.Model/Dummy v164.step` in FreeCAD 1.0+ or the user's existing CAD system. Save no changes into `4.Model/`. Use the model tree, visibility isolation and section views to identify base, J1–J6, motor/drive covers, links, wrist and end interface.
+Open `../Dummy-Robot/4.Model/Dummy v164.step` in FreeCAD 1.0+ or the existing CAD system. Save no changes into the mother repository. Use the model tree, visibility isolation and section views to identify base, J1–J6, motor/drive covers, links, wrist and end interface.
 
 - [ ] **Step 2: Create the assembly tree**
 
@@ -359,7 +435,7 @@ Rules:
 joint_id,node_id,parent_link,child_link,axis_in_parent,solver_parameter_m,reduction,inverse_direction,configured_limit_min_deg,configured_limit_max_deg,motor_class,source_ref,evidence_level,verification_action
 ```
 
-Seed it from `2.Firmware/Core-STM32F4-fw/Robot/instances/dummy_robot.cpp` and independently check geometry in STEP. The required source-code baseline is:
+Seed it from `upstream:2.Firmware/Core-STM32F4-fw/Robot/instances/dummy_robot.cpp` and independently check geometry in STEP. The required source-code baseline is:
 
 ```text
 reduction: J1=50, J2=30, J3=30, J4=24, J5=30, J6=50
@@ -391,12 +467,14 @@ The validator must assert:
 - node IDs equal `[1, 2, 3, 4, 5, 6]`, reductions equal `[50, 30, 30, 24, 30, 50]`, and inverse flags/limits match the constructor baseline;
 - every joint has a nonempty `source_ref` and `verification_action`;
 - every assembly row uses an allowed `part_class` and `evidence_level`;
-- every referenced repository path exists unless the reference begins `measurement:`.
+- every `upstream:` reference resolves beneath the explicit source root and exists;
+- every non-source reference begins `measurement:` or resolves beneath the project root;
+- neither source nor project references escape their root through `..`.
 
 Run:
 
 ```bash
-python3 tools/reproduction/validate_m0.py --root .
+python3 tools/reproduction/validate_m0.py --project-root . --source-root ../Dummy-Robot
 ```
 
 Expected: `mechanical checks: PASS`; other M0 sections may report `not yet checked` until their tasks are complete.
@@ -459,7 +537,7 @@ Explain what is available as source versus binary in CLI-Tool and DummyStudio; s
 Add checks that every board row has a source path and role, each connector row has a voltage domain and verification method, and all Markdown flow documents contain at least one repository source reference.
 
 ```bash
-python3 tools/reproduction/validate_m0.py --root .
+python3 tools/reproduction/validate_m0.py --project-root . --source-root ../Dummy-Robot
 ```
 
 Expected: `mechanical checks: PASS` and `electronics/software checks: PASS`.
@@ -507,7 +585,7 @@ Then reopen the sources, annotate every wrong or missing step, and link the corr
 - [ ] **Step 4: Run the complete gate validator**
 
 ```bash
-python3 tools/reproduction/validate_m0.py --root . --require-complete
+python3 tools/reproduction/validate_m0.py --project-root . --source-root ../Dummy-Robot --require-complete
 ```
 
 Expected:
@@ -524,10 +602,11 @@ M0 gate: PASS
 Run:
 
 ```bash
-git diff --name-only $(git merge-base HEAD master 2>/dev/null || git merge-base HEAD main)..HEAD
+git -C ../Dummy-Robot status --short -- 0.SubModules 1.Hardware 2.Firmware 3.Software 4.Model 5.Docs
+test -z "$(git ls-tree -d --name-only HEAD -- 0.SubModules 1.Hardware 2.Firmware 3.Software 4.Model 5.Docs)"
 ```
 
-Expected: no M0/M1 implementation change under the six mother-project directories.
+Expected: the mother asset status and reproduction-repository tree query both print nothing; no mother asset was modified or copied.
 
 - [ ] **Step 6: Commit and tag**
 
@@ -1039,9 +1118,16 @@ Review the M1 evidence, original MotorDriver-42 schematic/PCB and procurement ri
 Run from the repository root:
 
 ```bash
-python3 tools/reproduction/inventory.py --root . --output /tmp/dummy-inventory-check.csv
+python3 tools/reproduction/inventory.py \
+  --project-root . \
+  --source-root ../Dummy-Robot \
+  --output /tmp/dummy-inventory-check.csv \
+  --lock-output /tmp/dummy-source-lock-check.json \
+  --canonical-url https://github.com/peng-zhihui/Dummy-Robot.git
 cmp /tmp/dummy-inventory-check.csv docs/reproduction/m0/repository-inventory.csv
-python3 tools/reproduction/validate_m0.py --root . --require-complete
+cmp /tmp/dummy-source-lock-check.json docs/reproduction/m0/source-lock.json
+git -C ../Dummy-Robot status --short -- 0.SubModules 1.Hardware 2.Firmware 3.Software 4.Model 5.Docs
+python3 tools/reproduction/validate_m0.py --project-root . --source-root ../Dummy-Robot --require-complete
 make -C learning/m1-embedded/tests clean all
 python3 -m unittest discover -s learning/m1-embedded/tests -p 'test_*.py' -v
 python3 learning/m1-embedded/05-can-angle/host/validate_log.py learning/m1-embedded/05-can-angle/captures/can-60s.csv
@@ -1049,7 +1135,7 @@ git diff --check
 git status --short
 ```
 
-Expected: inventory is reproducible, M0 gate passes, all host tests pass, the physical CAN log passes, whitespace check is empty, and working tree is clean after the final commit.
+Expected: inventory and lock are reproducible, mother asset roots are clean, M0 gate passes, all host tests pass, the physical CAN log passes, whitespace check is empty, and the reproduction working tree is clean after the final commit.
 
 Manual evidence checklist:
 
@@ -1072,4 +1158,4 @@ Manual evidence checklist:
 - [STM32F103x8/B datasheet](https://www.st.com/resource/en/datasheet/stm32f103rb.pdf) and [RM0008 reference manual](https://www.st.com/resource/en/reference_manual/rm0008-stm32f101xx-stm32f102xx-stm32f103xx-stm32f105xx-and-stm32f107xx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf) — electrical limits, clocks, GPIO, timers, ADC, SPI and bxCAN.
 - [SN65HVD230 datasheet](https://www.ti.com/lit/ds/symlink/sn65hvd230.pdf) — 3.3 V CAN transceiver, pins, decoupling and ISO 11898-2 bus connection.
 - [MT6816 official product page](https://www.magntek.com.cn/136/105) — 14-bit angle output, SPI timing and magnet status.
-- Mother-project evidence: `README.md`, `2.Firmware/Core-STM32F4-fw/Robot/instances/dummy_robot.cpp`, `2.Firmware/Ctrl-Step-Driver-STM32F1-fw/Ctrl/Sensor/Encoder/mt6816_base.cpp`, `2.Firmware/Ctrl-Step-Driver-STM32F1-fw/Port/mt6816_stm32.cpp`, and the Altium projects under `1.Hardware/`.
+- Mother-project evidence: `upstream:README.md`, `upstream:2.Firmware/Core-STM32F4-fw/Robot/instances/dummy_robot.cpp`, `upstream:2.Firmware/Ctrl-Step-Driver-STM32F1-fw/Ctrl/Sensor/Encoder/mt6816_base.cpp`, `upstream:2.Firmware/Ctrl-Step-Driver-STM32F1-fw/Port/mt6816_stm32.cpp`, and the Altium projects under `upstream:1.Hardware/`.

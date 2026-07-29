@@ -19,3 +19,12 @@
 - **evidence：** 当前仓库的上游与许可边界（`README.md`）以及设计说明第 4.5 节的许可证待确认结论（evidence）。
 - **consequence：** 复现工作可独立审计，避免未经许可的再分发；需要引用上游时记录链接、路径、版本或哈希，而非复制资产。
 - **revisit condition：** 若获得清晰、适用的上游许可并且纳入某类资产确有必要，可按许可范围重新评估。
+
+## DEC-0003
+
+- **date：** 2026-07-29
+- **decision：** M0 工具通过显式 `--project-root` 与 `--source-root` 在双仓库之间工作；母本引用使用 `upstream:<relative-posix-path>`，并由 `source-lock.json` 固定 URL、提交和资产根。
+- **alternatives：** 把母本复制进复现仓库；依赖当前工作目录和本机绝对路径；只记录文件名而不锁定来源提交。
+- **evidence：** `DEC-0002` 已确认母本/复现仓库分离；当前工作区使用相邻目录 `Dummy-Robot/` 与 `Dummy-Robot-Reproduction/`（evidence）。
+- **consequence：** 复现仓库不分发母本资产，同时清单、引用和验证仍可追溯到确切 checkout；工具必须拒绝脏的母本资产根、根目录逃逸和含凭据的远端 URL。
+- **revisit condition：** 若以后采用只读 submodule、制品仓库或正式上游发行包，则在保持等价来源锁定和只读边界的前提下复审路径契约。
