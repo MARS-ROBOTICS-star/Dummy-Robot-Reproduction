@@ -1,0 +1,260 @@
+                                        Made by zRed
+
+
+Dummy 组装细节与使用指南
+论坛链接 http://dummy.free.mbbs.cc
+(木子晓汶版开源链接)https://gitee.com/switchpi/dummy/tree/auk (auk 分支)
+
+虚拟环境下载网盘地址
+
+链接：https://pan.baidu.com/s/1SL0wGHDJy_RRZEXTTFYR3g 提取码：1234
+
+网页端串口调试助手 serial.keysking.com
+
+烧录工具下载 https://vcon.io/docs/#quickstart （我也会上传到论坛）
+
+
+
+
+1 电路连接
+
+    Ref to j1 使用同向线，需要交换中间两根 canbus 线
+    剩下 j1 至 j6 的连接都使用反向线
+
+
+
+
+                                      从原理图可以看出，电源线是两根一组（电机驱动和
+                                 ref 板都是这样）
+
+
+
+
+                                        Made by zRed
+                      Made by zRed
+
+
+
+  6pin 接口左边 IN 侧 24v 丝印处为 24V,右边 out 侧实际 24v 在左边（靠 IN
+侧）
+  下面有更详细定义
+
+
+
+
+   注意上面两个 6pin 接口的 IN 和 OUT,上一级的 OUT 接上反向线后连到下一级
+的 IN 左下第三个 6pin 接口则是程序烧录接口，别接错了
+
+
+
+
+                      Made by zRed
+                  Made by zRed
+
+
+
+
+手绘的接线图（偷个懒）
+正极线上的那个圆的是自锁开关
+
+
+
+
+下面是一些引脚定义，以及拨码方式 注意 j1 到 j6 拨码开关从 1 开始
+
+
+
+
+                  Made by zRed
+Made by zRed
+
+
+
+
+Made by zRed
+Made by zRed
+
+
+
+
+Made by zRed
+                    Made by zRed
+
+
+
+
+2 皮带尺寸（参考）
+     110 116 148 182 建议购买时按正负 2mm 多买几根便于调整
+
+
+3 stlink 调试接线：
+
+
+
+
+                  使用 stlink 的话接前三根就行
+
+
+
+
+                    Made by zRed
+                                Made by zRed
+
+
+
+
+4 usb 命令使用指南：
+本指令清单是用于 usb 命令，即用于 dummy studio，下面的命令以如下格式给出
+
+"命令"                （重点关注）
+此命令调用的部分函数            （有需要的关注这点）
+返回值                 （建议关注，以便得知机械臂状态）
+
+机械臂打开后的操作：
+1 在未上电前将机械臂折叠好，对准刻度
+
+
+
+
+2 上电后在 dummy studio 使用！HOME 命令（发送命令末尾需要选择第四个    ），机
+械臂会展开
+3 使用！START 命令，机械臂使能，此时可以发送命令，拖动滑条控制机械臂需选择关节轴
+手动
+
+
+
+
+接下来给出命令清单
+
+需要加"!"的指令：
+  例： !START
+
+       "STOP"
+       dummy.commandHandler.EmergencyStop();
+       Respond "Stopped ok"
+
+       "START"
+       dummy.SetEnable(true);
+       Respond "Started ok"
+
+       "HOME"
+
+
+                                Made by zRed
+                                  Made by zRed
+
+        dummy.Homing();
+        Respond "Started ok"
+
+        "CALIBRATION"
+        dummy.CalibrateHomeOffset();
+        Respond "calibration ok"
+
+        "RESET"
+        dummy.Resting();
+        Respond "Started ok"
+
+        "DISABLE"
+        dummy.SetEnable(false);
+        Respond "Disabled ok
+
+需要加#的指令
+ 例: #GETJPOS
+
+        "GETJPOS"
+        Respond(_responseChannel, "ok %.2f %.2f %.2f %.2f %.2f %.2f",
+                dummy.currentJoints.a[0], dummy.currentJoints.a[1],
+                dummy.currentJoints.a[2], dummy.currentJoints.a[3],
+                dummy.currentJoints.a[4], dummy.currentJoints.a[5]);
+
+        "GETLPOS"
+        dummy.UpdateJointPose6D();
+        Respond(_responseChannel, "ok %.2f %.2f %.2f %.2f %.2f %.2f",
+                dummy.currentPose6D.X, dummy.currentPose6D.Y,
+                dummy.currentPose6D.Z, dummy.currentPose6D.A,
+                dummy.currentPose6D.B, dummy.currentPose6D.C);
+
+        "SET_DCE_KP"
+        Respond ok SET MOTOR [%lu] DCE_KP [%lu]", node, kp
+        Respond "error SET MOTOR [%lu] DCE_KP [%lu] is wrong", node, kp
+
+        "SET_DCE_KI"
+            Respond "ok SET MOTOR [%lu] DCE_KI [%lu]", node, kp
+            Respond "error SET MOTOR [%lu] DCE_KI [%lu] is wrong", node, kp
+
+        "SET_DCE_KD"
+            Respond "ok SET MOTOR [%lu] DCE_KD [%lu]", node, kp
+           Respond "error SET MOTOR [%lu] DCE_KD [%lu] is wrong", node, kp
+
+        "REBOOT"
+
+
+                                  Made by zRed
+                                     Made by zRed
+
+                  Respond   "ok REBOOT MOTOR [%lu]", node
+                  Respond   "error REBOOT MOTOR [%lu] is wrong", node
+
+           "CMDMODE"
+           dummy.SetCommandMode(mode);
+           Respond "ok Set command mode to [%lu]", mode
+
+
+
+           '>' , '@' , '&'
+           uint32_t freeSize = dummy.commandHandler.Push(_cmd);
+           Respond(_responseChannel, "%d", freeSize);
+
+           使用”@”发送末端位姿 例：@175,44,160,-135,-13.54,-14.66
+           使用”&”发送不同 6 个关节坐标 例 &0,0,134,35,66,0
+
+
+
+
+5 web 端上位机使用指南：
+      1 首先刷写 esp32 固件，刷写 esp32 时，usb 口反过来插，会识别到 2102 芯片
+      2 \dummy-auk\dummy-auk\esp32-iot\firmware\examples\esp32\uart-bridge 把 esp32
+      烧录工具（esputil）复制到这个文件夹下
+   3 此文件夹下使用命令如下 （/dev/cu.usbserial-0001 需要改成你的串口
+ 号，windows 下一般是 COMX,比如 COM3 COM5）
+    ./esputil -fspi 6,17,8,11,16 -p /dev/cu.usbserial-0001                     fl
+ ash bridge.hex
+    4 等待烧写完毕 打开串口调试助手，重启机械臂
+    然后会看到串口助手返回以下命令
+ Unknown command. Usage:
+
+ set NAME VALUE
+
+ rm FILENAME
+
+ cat FILENAME
+
+ ls
+
+ reboot
+
+ wifi WIFI_NET WIFI_PASS
+
+ CLI output end
+
+   使用 wifi WIFI_NET WIFI_PASS 这条命令，将 WFIFI_NET 换成你的 wifi
+ 名，WIFI_PASS 换成你的 wifi 密码，这里最好一次输对检查下，输入完成后
+ 结尾加上换行（enter 敲一下）后发送
+   5 重启一下就能看到返回的 ip 信息，复制 ip 到浏览器就能打开 web 上
+ 位机了
+
+
+
+
+                                     Made by zRed
+            Made by zRed
+
+注意事项：
+1 刷固件要给板子上电
+2 USB（typeC）口有正反，上电后电脑识别不到别慌，拔出来，翻一面
+
+
+
+
+            Made by zRed
+

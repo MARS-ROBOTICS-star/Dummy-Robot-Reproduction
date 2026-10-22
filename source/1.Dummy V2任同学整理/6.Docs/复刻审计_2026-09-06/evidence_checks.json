@@ -1,0 +1,2137 @@
+{
+  "tools": {
+    "cmake": null,
+    "arm-none-eabi-gcc": null,
+    "make": "/usr/bin/make",
+    "ninja": null,
+    "gcc": "/usr/bin/gcc",
+    "g++": "/usr/bin/g++",
+    "pdftotext": "/usr/bin/pdftotext"
+  },
+  "relative_path_source_stubs": [
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/arduino/w5500-http/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/arduino/w5500-http/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/arduino/w5500-mqtt/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/arduino/w5500-mqtt/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/captive-dns-server/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/captive-dns-server/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/device-dashboard/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/device-dashboard/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/embedded-filesystem/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/embedded-filesystem/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/esp32/device-dashboard/main/mongoose.c",
+      "text": "../../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/esp32/device-dashboard/main/mongoose.h",
+      "text": "../../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/esp32/device-dashboard/main/net.c",
+      "text": "../../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/esp32/device-dashboard/main/net.h",
+      "text": "../../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/esp32/device-dashboard/main/packed_fs.c",
+      "text": "../../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/esp32/uart-bridge/main/mongoose.c",
+      "text": "../../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/esp32/uart-bridge/main/mongoose.h",
+      "text": "../../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/esp32/uart-bridge/main/net.c",
+      "text": "../../../uart-bridge/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/esp32/uart-bridge/main/packed_fs.c",
+      "text": "../../../uart-bridge/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/esp8266/http-client-server/src/main/mongoose.c",
+      "text": "../../../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/file-upload-html-form/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/file-upload-html-form/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/file-upload-multiple-posts/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/file-upload-multiple-posts/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/file-upload-single-post/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/file-upload-single-post/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/http-client/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/http-client/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/http-proxy-client/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/http-proxy-client/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/http-proxy-client/packed_fs.c",
+      "text": "../http-client/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/http-restful-server/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/http-restful-server/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/http-reverse-proxy/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/http-reverse-proxy/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/http-reverse-proxy/packed_fs.c",
+      "text": "../http-client/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/http-server/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/http-server/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/http-streaming-client/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/http-streaming-client/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/http-streaming-client/packed_fs.c",
+      "text": "../http-client/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/huge-response/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/huge-response/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/json-rpc-over-websocket/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/json-rpc-over-websocket/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/live-log/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/live-log/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/microchip/same54-xpro/device-dashboard/mongoose.c",
+      "text": "../../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/microchip/same54-xpro/device-dashboard/mongoose.h",
+      "text": "../../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/microchip/same54-xpro/device-dashboard/net.c",
+      "text": "../../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/microchip/same54-xpro/device-dashboard/net.h",
+      "text": "../../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/microchip/same54-xpro/device-dashboard/packed_fs.c",
+      "text": "../../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/microchip/same54-xpro/mqtt-client/mongoose.c",
+      "text": "../../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/microchip/same54-xpro/mqtt-client/mongoose.h",
+      "text": "../../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/mip-pcap/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/mip-pcap/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/mip-tap/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/mip-tap/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/mip-tap/net.c",
+      "text": "../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/mip-tap/net.h",
+      "text": "../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/mip-tap/packed_fs.c",
+      "text": "../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/mqtt-client/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/mqtt-client/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/mqtt-client/packed_fs.c",
+      "text": "../http-client/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/mqtt-client-aws-iot/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/mqtt-client-aws-iot/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/mqtt-client-aws-iot/packed_fs.c",
+      "text": "../http-client/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/mqtt-over-ws-client/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/mqtt-over-ws-client/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/mqtt-over-ws-client/packed_fs.c",
+      "text": "../http-client/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/mqtt-server/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/mqtt-server/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/multi-threaded/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/multi-threaded/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/nxp/rt1020-evk-make-baremetal-builtin/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/nxp/rt1020-evk-make-baremetal-builtin/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/nxp/rt1020-evk-make-baremetal-builtin/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/nxp/rt1020-evk-make-baremetal-builtin/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/nxp/rt1020-evk-make-baremetal-builtin/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/nxp/rt1020-evk-make-freertos-builtin/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/nxp/rt1020-evk-make-freertos-builtin/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/nxp/rt1060-evk-make-baremetal-builtin/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/nxp/rt1060-evk-make-baremetal-builtin/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/nxp/rt1060-evk-make-baremetal-builtin/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/nxp/rt1060-evk-make-baremetal-builtin/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/nxp/rt1060-evk-make-baremetal-builtin/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/nxp/rt1060-evk-make-freertos-builtin/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/nxp/rt1060-evk-make-freertos-builtin/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/nxp/rt1060-evk-make-freertos-builtin/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/nxp/rt1060-evk-make-freertos-builtin/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/nxp/rt1060-evk-make-freertos-builtin/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/rp2040/pico-rmii/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/rp2040/pico-rmii/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/rp2040/pico-rndis-dashboard/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/rp2040/pico-rndis-dashboard/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/rp2040/pico-rndis-dashboard/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/rp2040/pico-rndis-dashboard/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/rp2040/pico-rndis-dashboard/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/rp2040/pico-w5500/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/rp2040/pico-w5500/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/rp2040/pico-w5500/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/rp2040/pico-w5500/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/rp2040/pico-w5500/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/smtp-client/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/smtp-client/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/smtp-client/packed_fs.c",
+      "text": "../http-client/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/sntp-time-sync/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/sntp-time-sync/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/socks5-server/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/socks5-server/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-cube-baremetal-builtin/Core/Inc/mongoose.h",
+      "text": "../../../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-cube-baremetal-builtin/Core/Inc/net.h",
+      "text": "../../../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-cube-baremetal-builtin/Core/Src/mongoose.c",
+      "text": "../../../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-cube-baremetal-builtin/Core/Src/net.c",
+      "text": "../../../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-cube-baremetal-builtin/Core/Src/packed_fs.c",
+      "text": "../../../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-cube-freertos-builtin/Core/Inc/mongoose.h",
+      "text": "../../../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-cube-freertos-builtin/Core/Inc/net.h",
+      "text": "../../../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-cube-freertos-builtin/Core/Src/mongoose.c",
+      "text": "../../../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-cube-freertos-builtin/Core/Src/net.c",
+      "text": "../../../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-cube-freertos-builtin/Core/Src/packed_fs.c",
+      "text": "../../../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-cube-freertos-lwip/Core/Inc/mongoose.h",
+      "text": "../../../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-cube-freertos-lwip/Core/Inc/net.h",
+      "text": "../../../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-cube-freertos-lwip/Core/Src/mongoose.c",
+      "text": "../../../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-cube-freertos-lwip/Core/Src/net.c",
+      "text": "../../../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-cube-freertos-lwip/Core/Src/packed_fs.c",
+      "text": "../../../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-keil-baremetal/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-keil-baremetal/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-keil-baremetal/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-keil-baremetal/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-keil-baremetal/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-keil-freertos/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-keil-freertos/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-keil-freertos/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-keil-freertos/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-keil-freertos/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-make-baremetal-builtin/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-make-baremetal-builtin/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-make-baremetal-builtin/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-make-baremetal-builtin/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-make-baremetal-builtin/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-make-baremetal-builtin-rndis/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-make-baremetal-builtin-rndis/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-make-freertos-builtin/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-make-freertos-builtin/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-make-freertos-builtin/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-make-freertos-builtin/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f429zi-make-freertos-builtin/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-cube-baremetal-builtin/Core/Inc/mongoose.h",
+      "text": "../../../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-cube-baremetal-builtin/Core/Inc/net.h",
+      "text": "../../../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-cube-baremetal-builtin/Core/Src/mongoose.c",
+      "text": "../../../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-cube-baremetal-builtin/Core/Src/net.c",
+      "text": "../../../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-cube-baremetal-builtin/Core/Src/packed_fs.c",
+      "text": "../../../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-cube-freertos-builtin/Core/Inc/mongoose.h",
+      "text": "../../../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-cube-freertos-builtin/Core/Inc/net.h",
+      "text": "../../../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-cube-freertos-builtin/Core/Src/mongoose.c",
+      "text": "../../../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-cube-freertos-builtin/Core/Src/net.c",
+      "text": "../../../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-cube-freertos-builtin/Core/Src/packed_fs.c",
+      "text": "../../../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-cube-freertos-lwip/Core/Inc/mongoose.h",
+      "text": "../../../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-cube-freertos-lwip/Core/Inc/net.h",
+      "text": "../../../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-cube-freertos-lwip/Core/Src/mongoose.c",
+      "text": "../../../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-cube-freertos-lwip/Core/Src/net.c",
+      "text": "../../../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-cube-freertos-lwip/Core/Src/packed_fs.c",
+      "text": "../../../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-baremetal/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-baremetal/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-baremetal/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-baremetal/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-baremetal/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-freertos/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-freertos/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-freertos/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-freertos/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-freertos/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-freertos-lwip/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-freertos-lwip/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-freertos-lwip/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-freertos-lwip/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-freertos-lwip/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-freertos-tcp/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-freertos-tcp/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-freertos-tcp/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-freertos-tcp/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-freertos-tcp/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-freertos_cmsis2/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-freertos_cmsis2/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-freertos_cmsis2/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-freertos_cmsis2/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-freertos_cmsis2/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-freertos_cmsis2-lwip/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-freertos_cmsis2-lwip/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-freertos_cmsis2-lwip/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-freertos_cmsis2-lwip/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-freertos_cmsis2-lwip/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-rtx/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-rtx/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-rtx/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-rtx/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-rtx/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-rtx-mdk/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-rtx-mdk/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-rtx-mdk/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-rtx-mdk/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-rtx-mdk/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-rtx5/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-rtx5/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-rtx5/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-rtx5/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-rtx5/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-rtx5-lwip/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-rtx5-lwip/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-rtx5-lwip/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-rtx5-lwip/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-rtx5-lwip/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-rtx5-mdk/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-rtx5-mdk/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-rtx5-mdk/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-rtx5-mdk/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-keil-rtx5-mdk/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-make-baremetal-builtin/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-make-baremetal-builtin/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-make-baremetal-builtin/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-make-baremetal-builtin/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-make-baremetal-builtin/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-make-baremetal-builtin-rndis/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-make-baremetal-builtin-rndis/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-make-freertos-builtin/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-make-freertos-builtin/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-make-freertos-builtin/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-make-freertos-builtin/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-make-freertos-builtin/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-make-freertos-tcp/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-make-freertos-tcp/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-make-freertos-tcp/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-make-freertos-tcp/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-f746zg-make-freertos-tcp/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-g031-make-baremetal-builtin/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-g031-make-baremetal-builtin/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h563zi-make-baremetal-builtin/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h563zi-make-baremetal-builtin/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h563zi-make-baremetal-builtin/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h563zi-make-baremetal-builtin/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h563zi-make-baremetal-builtin/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h563zi-make-freertos-builtin/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h563zi-make-freertos-builtin/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h563zi-make-freertos-builtin/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h563zi-make-freertos-builtin/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h563zi-make-freertos-builtin/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h723zg-make-baremetal-builtin/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h723zg-make-baremetal-builtin/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h723zg-make-baremetal-builtin/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h723zg-make-baremetal-builtin/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h723zg-make-baremetal-builtin/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h723zg-make-freertos-builtin/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h723zg-make-freertos-builtin/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h723zg-make-freertos-builtin/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h723zg-make-freertos-builtin/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h723zg-make-freertos-builtin/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h743zi-cube-baremetal-builtin/Core/Inc/mongoose.h",
+      "text": "../../../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h743zi-cube-baremetal-builtin/Core/Inc/net.h",
+      "text": "../../../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h743zi-cube-baremetal-builtin/Core/Src/mongoose.c",
+      "text": "../../../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h743zi-cube-baremetal-builtin/Core/Src/net.c",
+      "text": "../../../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h743zi-cube-baremetal-builtin/Core/Src/packed_fs.c",
+      "text": "../../../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h743zi-cube-freertos-builtin/Core/Inc/mongoose.h",
+      "text": "../../../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h743zi-cube-freertos-builtin/Core/Inc/net.h",
+      "text": "../../../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h743zi-cube-freertos-builtin/Core/Src/mongoose.c",
+      "text": "../../../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h743zi-cube-freertos-builtin/Core/Src/net.c",
+      "text": "../../../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h743zi-cube-freertos-builtin/Core/Src/packed_fs.c",
+      "text": "../../../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h743zi-make-baremetal-builtin/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h743zi-make-baremetal-builtin/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h743zi-make-baremetal-builtin/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h743zi-make-baremetal-builtin/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h743zi-make-baremetal-builtin/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h743zi-make-freertos-builtin/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h743zi-make-freertos-builtin/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h743zi-make-freertos-builtin/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h743zi-make-freertos-builtin/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/stm32/nucleo-h743zi-make-freertos-builtin/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/tcp/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/tcp/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/ti/ek-tm4c1294xl-baremetal/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/ti/ek-tm4c1294xl-baremetal/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/ti/ek-tm4c1294xl-baremetal/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/ti/ek-tm4c1294xl-baremetal/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/ti/ek-tm4c1294xl-baremetal/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/ti/ek-tm4c1294xl-freertos/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/ti/ek-tm4c1294xl-freertos/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/ti/ek-tm4c1294xl-freertos/net.c",
+      "text": "../../device-dashboard/net.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/ti/ek-tm4c1294xl-freertos/net.h",
+      "text": "../../device-dashboard/net.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/ti/ek-tm4c1294xl-freertos/packed_fs.c",
+      "text": "../../device-dashboard/packed_fs.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/ti/ek-tm4c1294xl-rndis/mongoose.c",
+      "text": "../../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/ti/ek-tm4c1294xl-rndis/mongoose.h",
+      "text": "../../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/timers/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/timers/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/uart-bridge/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/uart-bridge/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/udp-ssdp-search/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/udp-ssdp-search/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/video-stream/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/video-stream/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/websocket-client/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/websocket-client/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/websocket-server/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/websocket-server/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/webui-login/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/webui-login/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/webui-plain/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/webui-plain/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/webui-preact/main.c",
+      "text": "../webui-plain/main.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/webui-preact/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/webui-preact/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/webui-push-rest/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/webui-push-rest/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/webui-push-ws/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/webui-push-ws/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/webui-rest/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/webui-rest/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/wifi-router-dashboard/mongoose.c",
+      "text": "../../mongoose.c",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/wifi-router-dashboard/mongoose.h",
+      "text": "../../mongoose.h",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/wifi-router-dashboard/web_root/bundle.js",
+      "text": "../../device-dashboard/web_root/bundle.js",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/wifi-router-dashboard/web_root/components.js",
+      "text": "../../device-dashboard/web_root/components.js",
+      "is_symlink": false,
+      "target_exists": true
+    },
+    {
+      "path": "2.Firmware/esp32-iot/firmware/examples/wifi-router-dashboard/web_root/history.min.js",
+      "text": "../../device-dashboard/web_root/history.min.js",
+      "is_symlink": false,
+      "target_exists": true
+    }
+  ],
+  "host_preprocessor": {
+    "command": [
+      "gcc",
+      "-E",
+      "-dM",
+      "-DUSE_HAL_DRIVER",
+      "-DSTM32F103xB",
+      "-I/home/lbz/Dummy-Robot/1.Dummy V2任同学整理/2.Firmware/dummy-42motor-fw/Core/Inc",
+      "-I/home/lbz/Dummy-Robot/1.Dummy V2任同学整理/2.Firmware/dummy-42motor-fw/Drivers/STM32F1xx_HAL_Driver/Inc",
+      "-I/home/lbz/Dummy-Robot/1.Dummy V2任同学整理/2.Firmware/dummy-42motor-fw/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy",
+      "-I/home/lbz/Dummy-Robot/1.Dummy V2任同学整理/2.Firmware/dummy-42motor-fw/Drivers/CMSIS/Device/ST/STM32F1xx/Include",
+      "-I/home/lbz/Dummy-Robot/1.Dummy V2任同学整理/2.Firmware/dummy-42motor-fw/Drivers/CMSIS/Include",
+      "/home/lbz/Dummy-Robot/1.Dummy V2任同学整理/2.Firmware/dummy-42motor-fw/Core/Src/system_stm32f1xx.c"
+    ],
+    "exit": 0,
+    "hse_macro": [
+      "#define HSE_VALUE 12000000U"
+    ],
+    "stderr": "",
+    "limitation": "Host preprocessing only; not an ARM firmware build."
+  },
+  "cpp_boolean_range_check": {
+    "exit": 0,
+    "stderr": ""
+  },
+  "gerber_packages": [
+    {
+      "path": "1.Hardware/LedRing/led gaber.zip",
+      "files": 32,
+      "zip_crc_error": null,
+      "nc_drill_candidates": [
+        "Project Outputs for LedRing/LedRing.TXT"
+      ],
+      "rules_file_prefix": {
+        "Project Outputs for LedRing/LedRing.RUL": "DRC Rules Export File for PCB: C:\\Users\\HX\\Desktop\\LedRing\\LedRing.PcbDoc\r\nRuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=3.00\r\nRuleKind=Width|RuleName=Width|Scope=Board"
+      }
+    },
+    {
+      "path": "1.Hardware/motor35/motor35 Gaber.zip",
+      "files": 34,
+      "zip_crc_error": null,
+      "nc_drill_candidates": [
+        "Motor-35.TXT"
+      ],
+      "rules_file_prefix": {
+        "Motor-35.RUL": "DRC Rules Export File for PCB: C:\\Users\\HX\\Desktop\\dummy-HENGX\\hardware\\motor35\\Motor-35.PcbDoc\r\nRuleKind=Width|RuleName=VCC|Scope=Board|Minimum=4.00\r\nRuleKind=Width|RuleName=GND|Scope=Board|Minimum=4"
+      }
+    },
+    {
+      "path": "1.Hardware/motor42/motor42 Gaber.zip",
+      "files": 31,
+      "zip_crc_error": null,
+      "nc_drill_candidates": [],
+      "rules_file_prefix": {
+        "Motor-42.RUL": "DRC Rules Export File for PCB: C:\\Users\\HX\\Desktop\\dummy-HENGX\\hardware\\motor42\\Motor-42.PcbDoc\r\nRuleKind=Width|RuleName=VCC|Scope=Board|Minimum=4.00\r\nRuleKind=Width|RuleName=GND|Scope=Board|Minimum=4"
+      }
+    },
+    {
+      "path": "1.Hardware/ref-controller/ref-controller-gerber.zip",
+      "files": 65,
+      "zip_crc_error": null,
+      "nc_drill_candidates": [
+        "REF-Base.TXT",
+        "REF_V1/REF-Base.TXT"
+      ],
+      "rules_file_prefix": {
+        "REF-Base.RUL": "DRC Rules Export File for PCB: C:\\Users\\HX\\Desktop\\dummy-HENGX\\hardware\\ref-controller\\REF-Base.PcbDoc\r\nRuleKind=Clearance|RuleName=Clearance_Logo|Scope=Board|Minimum=8.00\r\nRuleKind=Width|RuleName=Log",
+        "REF_V1/REF-Base.RUL": "DRC Rules Export File for PCB: C:\\AD-Design\\work\\Dummy\\REF\\REF-Base\\REF-Base.PcbDoc\r\nRuleKind=Clearance|RuleName=Clearance_Logo|Scope=Board|Minimum=8.00\r\nRuleKind=Width|RuleName=Logo|Scope=Board|Minim"
+      }
+    }
+  ],
+  "ref_constructor_rows": [
+    "    motorJ[1] = new CtrlStepMotor(_hcan, 1, true, 30, -170, 170);",
+    "    motorJ[2] = new CtrlStepMotor(_hcan, 2, false, 30, -73, 90);",
+    "    motorJ[3] = new CtrlStepMotor(_hcan, 3, true, 30, 35, 180);",
+    "    motorJ[4] = new CtrlStepMotor(_hcan, 4, false, 24, -180, 180);",
+    "    motorJ[5] = new CtrlStepMotor(_hcan, 5, true, 30, -120, 120);",
+    "    motorJ[6] = new CtrlStepMotor(_hcan, 6, true, 50, -720, 720);"
+  ],
+  "motor_42_vs_35_hash_differences": [
+    {
+      "path_42": "2.Firmware/dummy-42motor-fw/.cproject",
+      "path_35_exists": false
+    },
+    {
+      "path_42": "2.Firmware/dummy-42motor-fw/.gitignore",
+      "path_35_exists": false
+    },
+    {
+      "path_42": "2.Firmware/dummy-42motor-fw/.idea/.gitignore",
+      "path_35_exists": false
+    },
+    {
+      "path_42": "2.Firmware/dummy-42motor-fw/.idea/.name",
+      "path_35_exists": false
+    },
+    {
+      "path_42": "2.Firmware/dummy-42motor-fw/.idea/Ctrl-Step-fw.iml",
+      "path_35_exists": false
+    },
+    {
+      "path_42": "2.Firmware/dummy-42motor-fw/.idea/codeStyles/codeStyleConfig.xml",
+      "path_35_exists": false
+    },
+    {
+      "path_42": "2.Firmware/dummy-42motor-fw/.idea/copyright/ctrl_step.xml",
+      "path_35_exists": false
+    },
+    {
+      "path_42": "2.Firmware/dummy-42motor-fw/.idea/copyright/profiles_settings.xml",
+      "path_35_exists": false
+    },
+    {
+      "path_42": "2.Firmware/dummy-42motor-fw/.idea/deployment.xml",
+      "path_35_exists": false
+    },
+    {
+      "path_42": "2.Firmware/dummy-42motor-fw/.idea/encodings.xml",
+      "path_35_exists": false
+    },
+    {
+      "path_42": "2.Firmware/dummy-42motor-fw/.idea/inspectionProfiles/Project_Default.xml",
+      "path_35_exists": false
+    },
+    {
+      "path_42": "2.Firmware/dummy-42motor-fw/.idea/misc.xml",
+      "path_35_exists": false
+    },
+    {
+      "path_42": "2.Firmware/dummy-42motor-fw/.idea/modules.xml",
+      "path_35_exists": false
+    },
+    {
+      "path_42": "2.Firmware/dummy-42motor-fw/.idea/serialmonitor_settings.xml",
+      "path_35_exists": false
+    },
+    {
+      "path_42": "2.Firmware/dummy-42motor-fw/.idea/vcs.xml",
+      "path_35_exists": false
+    },
+    {
+      "path_42": "2.Firmware/dummy-42motor-fw/.mxproject",
+      "path_35_exists": false
+    },
+    {
+      "path_42": "2.Firmware/dummy-42motor-fw/.project",
+      "path_35_exists": false
+    },
+    {
+      "path_42": "2.Firmware/dummy-42motor-fw/UserApp/main.cpp",
+      "path_35_exists": true
+    }
+  ],
+  "python_ast_errors": [],
+  "budget_interval_sums_CNY": {
+    "required_tools": [
+      530,
+      1360
+    ],
+    "single_axis": [
+      310,
+      1200
+    ]
+  },
+  "delivery_checks": {
+    "documents": [
+      {
+        "path": "Dummy_V2详细复刻方案_审计修订版.md",
+        "lines": 723,
+        "characters": 25698,
+        "broken_links": [],
+        "missing_source_paths": []
+      },
+      {
+        "path": "6.Docs/复刻审计_2026-09-06/审计结论与证据.md",
+        "lines": 211,
+        "characters": 11818,
+        "broken_links": [],
+        "missing_source_paths": []
+      },
+      {
+        "path": "6.Docs/复刻审计_2026-09-06/实施记录模板.md",
+        "lines": 128,
+        "characters": 3287,
+        "broken_links": [],
+        "missing_source_paths": []
+      },
+      {
+        "path": "Dummy_V2复刻与学习方案_初稿.md",
+        "lines": 642,
+        "characters": 16227,
+        "broken_links": [],
+        "missing_source_paths": []
+      }
+    ],
+    "test_cases": 34,
+    "firmware_tasks": 12,
+    "work_units": 20,
+    "gates": 8,
+    "verified_pro_sessions": 5,
+    "changed_baseline_files": [
+      "Dummy_V2复刻与学习方案_初稿.md"
+    ]
+  }
+}

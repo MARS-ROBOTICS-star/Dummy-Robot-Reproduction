@@ -1,0 +1,1357 @@
+[
+  {
+    "path": "1.Hardware/LedRing/led gaber.zip",
+    "members": [
+      {
+        "name": "Project Outputs for LedRing/",
+        "bytes": 0,
+        "crc": 0
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing-macro.APR_LIB",
+        "bytes": 7064,
+        "crc": 1777716720
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.DRR",
+        "bytes": 1041,
+        "crc": 1876653319
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.EXTREP",
+        "bytes": 2020,
+        "crc": 1832352510
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.GBL",
+        "bytes": 903,
+        "crc": 168198051
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.GBO",
+        "bytes": 919,
+        "crc": 3955550396
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.GBP",
+        "bytes": 777,
+        "crc": 3769249164
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.GBS",
+        "bytes": 782,
+        "crc": 846360437
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.GD1",
+        "bytes": 508,
+        "crc": 963614788
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.GG1",
+        "bytes": 483,
+        "crc": 3513294860
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.GKO",
+        "bytes": 455,
+        "crc": 2490997911
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.GM1",
+        "bytes": 455,
+        "crc": 2490997911
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.GM10",
+        "bytes": 286,
+        "crc": 2950715098
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.GM12",
+        "bytes": 284,
+        "crc": 4011818898
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.GM13",
+        "bytes": 9649,
+        "crc": 39840294
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.GM14",
+        "bytes": 1956,
+        "crc": 2437073570
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.GM15",
+        "bytes": 284,
+        "crc": 4188576251
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.GM16",
+        "bytes": 280,
+        "crc": 79034801
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.GM2",
+        "bytes": 286,
+        "crc": 2950715098
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.GM4",
+        "bytes": 284,
+        "crc": 4011818898
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.GM7",
+        "bytes": 284,
+        "crc": 4188576251
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.GPB",
+        "bytes": 777,
+        "crc": 3098812710
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.GPT",
+        "bytes": 4844,
+        "crc": 3957388737
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.GTL",
+        "bytes": 85548,
+        "crc": 3235344421
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.GTO",
+        "bytes": 2718,
+        "crc": 1953590184
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.GTP",
+        "bytes": 4848,
+        "crc": 3972270830
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.GTS",
+        "bytes": 4848,
+        "crc": 3767336275
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.LDP",
+        "bytes": 153,
+        "crc": 169151773
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.REP",
+        "bytes": 6570,
+        "crc": 2569522802
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.RUL",
+        "bytes": 346,
+        "crc": 1038153104
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.TXT",
+        "bytes": 138,
+        "crc": 2725468128
+      },
+      {
+        "name": "Project Outputs for LedRing/LedRing.apr",
+        "bytes": 300,
+        "crc": 912253891
+      },
+      {
+        "name": "Project Outputs for LedRing/Status Report.Txt",
+        "bytes": 277,
+        "crc": 3403442596
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/motor35/PCB源文件/History/Motor-35.~(1).PcbDoc.Zip",
+    "members": [
+      {
+        "name": "Motor-35.~(1).PcbDoc",
+        "bytes": 4068352,
+        "crc": 841697121
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/motor35/PCB源文件/History/Motor-35.~(3).PcbDoc.Zip",
+    "members": [
+      {
+        "name": "Motor-35.~(3).PcbDoc",
+        "bytes": 4066304,
+        "crc": 1672982889
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/motor35/motor35 Gaber.zip",
+    "members": [
+      {
+        "name": "Motor-35-macro.APR_LIB",
+        "bytes": 9862,
+        "crc": 1227809056
+      },
+      {
+        "name": "Motor-35.DRR",
+        "bytes": 1672,
+        "crc": 3996215310
+      },
+      {
+        "name": "Motor-35.EXTREP",
+        "bytes": 2145,
+        "crc": 902098840
+      },
+      {
+        "name": "Motor-35.G1",
+        "bytes": 26217,
+        "crc": 4187585998
+      },
+      {
+        "name": "Motor-35.G2",
+        "bytes": 18347,
+        "crc": 883667196
+      },
+      {
+        "name": "Motor-35.GBL",
+        "bytes": 17145,
+        "crc": 4063846502
+      },
+      {
+        "name": "Motor-35.GBO",
+        "bytes": 14645,
+        "crc": 3746101010
+      },
+      {
+        "name": "Motor-35.GBP",
+        "bytes": 4272,
+        "crc": 2011739863
+      },
+      {
+        "name": "Motor-35.GBS",
+        "bytes": 7612,
+        "crc": 761688058
+      },
+      {
+        "name": "Motor-35.GD1",
+        "bytes": 12575,
+        "crc": 3718163296
+      },
+      {
+        "name": "Motor-35.GG1",
+        "bytes": 9562,
+        "crc": 3415924059
+      },
+      {
+        "name": "Motor-35.GKO",
+        "bytes": 372,
+        "crc": 897565309
+      },
+      {
+        "name": "Motor-35.GM1",
+        "bytes": 1327,
+        "crc": 463579811
+      },
+      {
+        "name": "Motor-35.GM10",
+        "bytes": 791,
+        "crc": 2051008989
+      },
+      {
+        "name": "Motor-35.GM12",
+        "bytes": 789,
+        "crc": 910035071
+      },
+      {
+        "name": "Motor-35.GM13",
+        "bytes": 10725,
+        "crc": 1139678511
+      },
+      {
+        "name": "Motor-35.GM14",
+        "bytes": 5756,
+        "crc": 2981069988
+      },
+      {
+        "name": "Motor-35.GM15",
+        "bytes": 10241,
+        "crc": 1144652811
+      },
+      {
+        "name": "Motor-35.GM2",
+        "bytes": 286,
+        "crc": 3430181137
+      },
+      {
+        "name": "Motor-35.GM20",
+        "bytes": 284,
+        "crc": 2357936217
+      },
+      {
+        "name": "Motor-35.GM6",
+        "bytes": 3781,
+        "crc": 4014201650
+      },
+      {
+        "name": "Motor-35.GM7",
+        "bytes": 284,
+        "crc": 2587665968
+      },
+      {
+        "name": "Motor-35.GPB",
+        "bytes": 4782,
+        "crc": 3042537713
+      },
+      {
+        "name": "Motor-35.GPT",
+        "bytes": 8452,
+        "crc": 2614023772
+      },
+      {
+        "name": "Motor-35.GTL",
+        "bytes": 28236,
+        "crc": 178970352
+      },
+      {
+        "name": "Motor-35.GTO",
+        "bytes": 72170,
+        "crc": 4129064480
+      },
+      {
+        "name": "Motor-35.GTP",
+        "bytes": 7946,
+        "crc": 1882097663
+      },
+      {
+        "name": "Motor-35.GTS",
+        "bytes": 8657,
+        "crc": 3066563494
+      },
+      {
+        "name": "Motor-35.LDP",
+        "bytes": 182,
+        "crc": 956600708
+      },
+      {
+        "name": "Motor-35.REP",
+        "bytes": 8521,
+        "crc": 552959254
+      },
+      {
+        "name": "Motor-35.RUL",
+        "bytes": 476,
+        "crc": 3377106963
+      },
+      {
+        "name": "Motor-35.TXT",
+        "bytes": 2244,
+        "crc": 3122313244
+      },
+      {
+        "name": "Motor-35.apr",
+        "bytes": 4275,
+        "crc": 3283592631
+      },
+      {
+        "name": "Status Report.Txt",
+        "bytes": 280,
+        "crc": 2315608763
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/motor42/PCB源文件/History/Motor-42.~(1).PcbDoc.Zip",
+    "members": [
+      {
+        "name": "Motor-42.~(1).PcbDoc",
+        "bytes": 4125696,
+        "crc": 2271296677
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/motor42/PCB源文件/History/Motor-42.~(13).PcbDoc.Zip",
+    "members": [
+      {
+        "name": "Motor-42.~(13).PcbDoc",
+        "bytes": 4126208,
+        "crc": 1915099232
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/motor42/PCB源文件/History/Motor-42.~(14).PcbDoc.Zip",
+    "members": [
+      {
+        "name": "Motor-42.~(14).PcbDoc",
+        "bytes": 4126208,
+        "crc": 3832668486
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/motor42/PCB源文件/History/Motor-42.~(15).PcbDoc.Zip",
+    "members": [
+      {
+        "name": "Motor-42.~(15).PcbDoc",
+        "bytes": 4126208,
+        "crc": 3963724706
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/motor42/PCB源文件/History/Motor-42.~(16).PcbDoc.Zip",
+    "members": [
+      {
+        "name": "Motor-42.~(16).PcbDoc",
+        "bytes": 4126208,
+        "crc": 1778347097
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/motor42/PCB源文件/History/Motor-42.~(17).PcbDoc.Zip",
+    "members": [
+      {
+        "name": "Motor-42.~(17).PcbDoc",
+        "bytes": 4126208,
+        "crc": 3022848243
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/motor42/PCB源文件/History/Motor-42.~(18).PcbDoc.Zip",
+    "members": [
+      {
+        "name": "Motor-42.~(18).PcbDoc",
+        "bytes": 4126208,
+        "crc": 1788196292
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/motor42/PCB源文件/History/Motor-42.~(19).PcbDoc.Zip",
+    "members": [
+      {
+        "name": "Motor-42.~(19).PcbDoc",
+        "bytes": 4126208,
+        "crc": 1113221742
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/motor42/PCB源文件/History/Motor-42.~(2).PcbDoc.Zip",
+    "members": [
+      {
+        "name": "Motor-42.~(2).PcbDoc",
+        "bytes": 4126208,
+        "crc": 3965127280
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/motor42/PCB源文件/History/Motor-42.~(20).PcbDoc.Zip",
+    "members": [
+      {
+        "name": "Motor-42.~(20).PcbDoc",
+        "bytes": 4126208,
+        "crc": 3107861589
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/motor42/PCB源文件/History/Motor-42.~(21).PcbDoc.Zip",
+    "members": [
+      {
+        "name": "Motor-42.~(21).PcbDoc",
+        "bytes": 4126208,
+        "crc": 1528023057
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/motor42/PCB源文件/History/Motor-42.~(22).PcbDoc.Zip",
+    "members": [
+      {
+        "name": "Motor-42.~(22).PcbDoc",
+        "bytes": 4126208,
+        "crc": 521706472
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/motor42/PCB源文件/History/Motor-42.~(23).PcbDoc.Zip",
+    "members": [
+      {
+        "name": "Motor-42.~(23).PcbDoc",
+        "bytes": 4126208,
+        "crc": 532206211
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/motor42/PCB源文件/History/Motor-42.~(24).PcbDoc.Zip",
+    "members": [
+      {
+        "name": "Motor-42.~(24).PcbDoc",
+        "bytes": 4126208,
+        "crc": 2926952260
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/motor42/PCB源文件/History/Motor-42.~(3).PcbDoc.Zip",
+    "members": [
+      {
+        "name": "Motor-42.~(3).PcbDoc",
+        "bytes": 4126208,
+        "crc": 2072899637
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/motor42/PCB源文件/History/Motor-42.~(4).PcbDoc.Zip",
+    "members": [
+      {
+        "name": "Motor-42.~(4).PcbDoc",
+        "bytes": 4126208,
+        "crc": 794772545
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/motor42/PCB源文件/History/Motor-42.~(5).PcbDoc.Zip",
+    "members": [
+      {
+        "name": "Motor-42.~(5).PcbDoc",
+        "bytes": 4126208,
+        "crc": 3497552905
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/motor42/PCB源文件/History/Motor-42.~(6).PcbDoc.Zip",
+    "members": [
+      {
+        "name": "Motor-42.~(6).PcbDoc",
+        "bytes": 4126208,
+        "crc": 278696155
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/motor42/PCB源文件/History/Motor-42.~(7).PcbDoc.Zip",
+    "members": [
+      {
+        "name": "Motor-42.~(7).PcbDoc",
+        "bytes": 4126208,
+        "crc": 3357671299
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/motor42/PCB源文件/History/Motor-42.~(8).PcbDoc.Zip",
+    "members": [
+      {
+        "name": "Motor-42.~(8).PcbDoc",
+        "bytes": 4126208,
+        "crc": 2707333551
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/motor42/PCB源文件/History/Motor-42.~(9).PcbDoc.Zip",
+    "members": [
+      {
+        "name": "Motor-42.~(9).PcbDoc",
+        "bytes": 4126208,
+        "crc": 1682544965
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/motor42/motor42 Gaber.zip",
+    "members": [
+      {
+        "name": "Motor-42-macro.APR_LIB",
+        "bytes": 11868,
+        "crc": 3233779476
+      },
+      {
+        "name": "Motor-42.EXTREP",
+        "bytes": 2083,
+        "crc": 1625561391
+      },
+      {
+        "name": "Motor-42.G1",
+        "bytes": 30330,
+        "crc": 1508120335
+      },
+      {
+        "name": "Motor-42.G2",
+        "bytes": 18551,
+        "crc": 2473008752
+      },
+      {
+        "name": "Motor-42.GBL",
+        "bytes": 12702,
+        "crc": 1620870535
+      },
+      {
+        "name": "Motor-42.GBO",
+        "bytes": 12238,
+        "crc": 1081853402
+      },
+      {
+        "name": "Motor-42.GBP",
+        "bytes": 1894,
+        "crc": 2262297376
+      },
+      {
+        "name": "Motor-42.GBS",
+        "bytes": 2844,
+        "crc": 2333926782
+      },
+      {
+        "name": "Motor-42.GG1",
+        "bytes": 11072,
+        "crc": 2140399504
+      },
+      {
+        "name": "Motor-42.GKO",
+        "bytes": 1106,
+        "crc": 1703447516
+      },
+      {
+        "name": "Motor-42.GM1",
+        "bytes": 1162,
+        "crc": 260973007
+      },
+      {
+        "name": "Motor-42.GM10",
+        "bytes": 820,
+        "crc": 4132469299
+      },
+      {
+        "name": "Motor-42.GM12",
+        "bytes": 820,
+        "crc": 4134331361
+      },
+      {
+        "name": "Motor-42.GM13",
+        "bytes": 11726,
+        "crc": 1385671768
+      },
+      {
+        "name": "Motor-42.GM14",
+        "bytes": 6238,
+        "crc": 410002385
+      },
+      {
+        "name": "Motor-42.GM15",
+        "bytes": 11229,
+        "crc": 83639732
+      },
+      {
+        "name": "Motor-42.GM2",
+        "bytes": 286,
+        "crc": 4185017487
+      },
+      {
+        "name": "Motor-42.GM20",
+        "bytes": 284,
+        "crc": 3113051591
+      },
+      {
+        "name": "Motor-42.GM6",
+        "bytes": 3960,
+        "crc": 2238304183
+      },
+      {
+        "name": "Motor-42.GM7",
+        "bytes": 284,
+        "crc": 2939847598
+      },
+      {
+        "name": "Motor-42.GPB",
+        "bytes": 2402,
+        "crc": 1313344909
+      },
+      {
+        "name": "Motor-42.GPT",
+        "bytes": 11633,
+        "crc": 869610497
+      },
+      {
+        "name": "Motor-42.GTL",
+        "bytes": 35130,
+        "crc": 752363148
+      },
+      {
+        "name": "Motor-42.GTO",
+        "bytes": 95816,
+        "crc": 1320092572
+      },
+      {
+        "name": "Motor-42.GTP",
+        "bytes": 11129,
+        "crc": 3660595341
+      },
+      {
+        "name": "Motor-42.GTS",
+        "bytes": 11980,
+        "crc": 4142557000
+      },
+      {
+        "name": "Motor-42.REP",
+        "bytes": 8202,
+        "crc": 1199022362
+      },
+      {
+        "name": "Motor-42.RUL",
+        "bytes": 476,
+        "crc": 421016531
+      },
+      {
+        "name": "Motor-42.apr",
+        "bytes": 4200,
+        "crc": 2164409099
+      },
+      {
+        "name": "README.md",
+        "bytes": 142,
+        "crc": 2361215473
+      },
+      {
+        "name": "Status Report.Txt",
+        "bytes": 1105,
+        "crc": 4217954101
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/ref-controller/PCB源文件/History/REF-Base.~(1).PcbDoc.Zip",
+    "members": [
+      {
+        "name": "REF-Base.~(1).PcbDoc",
+        "bytes": 5224960,
+        "crc": 688621124
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/ref-controller/PCB源文件/History/REF-Base.~(2).PcbDoc.Zip",
+    "members": [
+      {
+        "name": "REF-Base.~(2).PcbDoc",
+        "bytes": 5224960,
+        "crc": 1267473084
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/ref-controller/REF_V1.01.zip",
+    "members": [
+      {
+        "name": "Main.SchDoc",
+        "bytes": 507392,
+        "crc": 2545982889
+      },
+      {
+        "name": "REF-Base.PcbDoc",
+        "bytes": 5229568,
+        "crc": 3928981587
+      }
+    ]
+  },
+  {
+    "path": "1.Hardware/ref-controller/ref-controller-gerber.zip",
+    "members": [
+      {
+        "name": "REF-Base-macro.APR_LIB",
+        "bytes": 16590,
+        "crc": 522586061
+      },
+      {
+        "name": "REF-Base.DRR",
+        "bytes": 1798,
+        "crc": 2795911627
+      },
+      {
+        "name": "REF-Base.EXTREP",
+        "bytes": 2083,
+        "crc": 818581071
+      },
+      {
+        "name": "REF-Base.GBL",
+        "bytes": 32044,
+        "crc": 1194017052
+      },
+      {
+        "name": "REF-Base.GBO",
+        "bytes": 28961,
+        "crc": 4145710640
+      },
+      {
+        "name": "REF-Base.GBP",
+        "bytes": 6500,
+        "crc": 1188960410
+      },
+      {
+        "name": "REF-Base.GBS",
+        "bytes": 7681,
+        "crc": 2908699451
+      },
+      {
+        "name": "REF-Base.GD1",
+        "bytes": 36758,
+        "crc": 2581681011
+      },
+      {
+        "name": "REF-Base.GG1",
+        "bytes": 14542,
+        "crc": 847416085
+      },
+      {
+        "name": "REF-Base.GKO",
+        "bytes": 903,
+        "crc": 1860147913
+      },
+      {
+        "name": "REF-Base.GM1",
+        "bytes": 2686,
+        "crc": 326402053
+      },
+      {
+        "name": "REF-Base.GM10",
+        "bytes": 740,
+        "crc": 4284015050
+      },
+      {
+        "name": "REF-Base.GM12",
+        "bytes": 778,
+        "crc": 785258060
+      },
+      {
+        "name": "REF-Base.GM13",
+        "bytes": 14696,
+        "crc": 250549283
+      },
+      {
+        "name": "REF-Base.GM14",
+        "bytes": 7732,
+        "crc": 2250132267
+      },
+      {
+        "name": "REF-Base.GM15",
+        "bytes": 10150,
+        "crc": 2739026022
+      },
+      {
+        "name": "REF-Base.GM2",
+        "bytes": 286,
+        "crc": 1363641263
+      },
+      {
+        "name": "REF-Base.GM6",
+        "bytes": 1470,
+        "crc": 689546374
+      },
+      {
+        "name": "REF-Base.GM7",
+        "bytes": 284,
+        "crc": 118443150
+      },
+      {
+        "name": "REF-Base.GP1",
+        "bytes": 5948,
+        "crc": 764430272
+      },
+      {
+        "name": "REF-Base.GP2",
+        "bytes": 4630,
+        "crc": 1534941443
+      },
+      {
+        "name": "REF-Base.GPB",
+        "bytes": 7291,
+        "crc": 1645826521
+      },
+      {
+        "name": "REF-Base.GPT",
+        "bytes": 14513,
+        "crc": 691470140
+      },
+      {
+        "name": "REF-Base.GTL",
+        "bytes": 43899,
+        "crc": 1567206090
+      },
+      {
+        "name": "REF-Base.GTO",
+        "bytes": 44086,
+        "crc": 245928101
+      },
+      {
+        "name": "REF-Base.GTP",
+        "bytes": 13726,
+        "crc": 3094999903
+      },
+      {
+        "name": "REF-Base.GTS",
+        "bytes": 14714,
+        "crc": 1444060934
+      },
+      {
+        "name": "REF-Base.LDP",
+        "bytes": 191,
+        "crc": 1958717701
+      },
+      {
+        "name": "REF-Base.REP",
+        "bytes": 9084,
+        "crc": 4234352938
+      },
+      {
+        "name": "REF-Base.RUL",
+        "bytes": 607,
+        "crc": 3460875298
+      },
+      {
+        "name": "REF-Base.TXT",
+        "bytes": 3352,
+        "crc": 864654761
+      },
+      {
+        "name": "REF-Base.apr",
+        "bytes": 6225,
+        "crc": 1307376336
+      },
+      {
+        "name": "REF_V1/",
+        "bytes": 0,
+        "crc": 0
+      },
+      {
+        "name": "Status Report.Txt",
+        "bytes": 280,
+        "crc": 3951956342
+      },
+      {
+        "name": "REF_V1/Design Rule Check - REF-Base.drc",
+        "bytes": 2839,
+        "crc": 997662599
+      },
+      {
+        "name": "REF_V1/Design Rule Check - REF-Base.html",
+        "bytes": 15800,
+        "crc": 232267145
+      },
+      {
+        "name": "REF_V1/REF-Base.apr",
+        "bytes": 6225,
+        "crc": 1307376336
+      },
+      {
+        "name": "REF_V1/REF-Base.DRR",
+        "bytes": 1802,
+        "crc": 1915287528
+      },
+      {
+        "name": "REF_V1/REF-Base.EXTREP",
+        "bytes": 1901,
+        "crc": 1426010226
+      },
+      {
+        "name": "REF_V1/REF-Base.GBL",
+        "bytes": 31768,
+        "crc": 344618098
+      },
+      {
+        "name": "REF_V1/REF-Base.GBO",
+        "bytes": 28918,
+        "crc": 1310285171
+      },
+      {
+        "name": "REF_V1/REF-Base.GBP",
+        "bytes": 6501,
+        "crc": 700188503
+      },
+      {
+        "name": "REF_V1/REF-Base.GBS",
+        "bytes": 7682,
+        "crc": 1871877323
+      },
+      {
+        "name": "REF_V1/REF-Base.GD1",
+        "bytes": 38371,
+        "crc": 3796796330
+      },
+      {
+        "name": "REF_V1/REF-Base.GG1",
+        "bytes": 14543,
+        "crc": 3826832858
+      },
+      {
+        "name": "REF_V1/REF-Base.GKO",
+        "bytes": 904,
+        "crc": 3631269417
+      },
+      {
+        "name": "REF_V1/REF-Base.GM1",
+        "bytes": 2687,
+        "crc": 225616566
+      },
+      {
+        "name": "REF_V1/REF-Base.GM10",
+        "bytes": 741,
+        "crc": 1137052237
+      },
+      {
+        "name": "REF_V1/REF-Base.GM12",
+        "bytes": 779,
+        "crc": 707854468
+      },
+      {
+        "name": "REF_V1/REF-Base.GM13",
+        "bytes": 14697,
+        "crc": 4081444271
+      },
+      {
+        "name": "REF_V1/REF-Base.GM14",
+        "bytes": 7771,
+        "crc": 2085376993
+      },
+      {
+        "name": "REF_V1/REF-Base.GM15",
+        "bytes": 10151,
+        "crc": 2714250874
+      },
+      {
+        "name": "REF_V1/REF-Base.GP1",
+        "bytes": 5942,
+        "crc": 3163374432
+      },
+      {
+        "name": "REF_V1/REF-Base.GP2",
+        "bytes": 4624,
+        "crc": 3427644492
+      },
+      {
+        "name": "REF_V1/REF-Base.GPB",
+        "bytes": 7292,
+        "crc": 1151831023
+      },
+      {
+        "name": "REF_V1/REF-Base.GPT",
+        "bytes": 14514,
+        "crc": 3733287499
+      },
+      {
+        "name": "REF_V1/REF-Base.GTL",
+        "bytes": 43887,
+        "crc": 1083134268
+      },
+      {
+        "name": "REF_V1/REF-Base.GTO",
+        "bytes": 73917,
+        "crc": 3919737980
+      },
+      {
+        "name": "REF_V1/REF-Base.GTP",
+        "bytes": 13727,
+        "crc": 413397117
+      },
+      {
+        "name": "REF_V1/REF-Base.GTS",
+        "bytes": 14715,
+        "crc": 4158028778
+      },
+      {
+        "name": "REF_V1/REF-Base.LDP",
+        "bytes": 172,
+        "crc": 3690096068
+      },
+      {
+        "name": "REF_V1/REF-Base.REP",
+        "bytes": 8361,
+        "crc": 418771584
+      },
+      {
+        "name": "REF_V1/REF-Base.RUL",
+        "bytes": 588,
+        "crc": 484598820
+      },
+      {
+        "name": "REF_V1/REF-Base.TXT",
+        "bytes": 3341,
+        "crc": 3130429505
+      },
+      {
+        "name": "REF_V1/REF-Base-macro.APR_LIB",
+        "bytes": 16590,
+        "crc": 522586061
+      },
+      {
+        "name": "REF_V1/Status Report.Txt",
+        "bytes": 285,
+        "crc": 1041853665
+      }
+    ]
+  },
+  {
+    "path": "4.Model/Dummy V2 版本 视频款/3D打印STL文件/dummy 亚克力 PCB盖板 图纸.zip",
+    "members": [
+      {
+        "name": "35.step",
+        "bytes": 50908,
+        "crc": 2251730443
+      },
+      {
+        "name": "42.pdf",
+        "bytes": 34951,
+        "crc": 1801889153
+      },
+      {
+        "name": "42.step",
+        "bytes": 53303,
+        "crc": 1872296945
+      },
+      {
+        "name": "35.pdf",
+        "bytes": 30471,
+        "crc": 3101813800
+      }
+    ]
+  },
+  {
+    "path": "4.Model/木子晓汶版本3D模型/Out_stp1/BACK/metal_step/mini8-cover1105.zip",
+    "members": [
+      {
+        "name": "MINI8-2D-DRAW.png",
+        "bytes": 48003,
+        "crc": 2726284098
+      },
+      {
+        "name": "mini8-cover1105.step",
+        "bytes": 49930,
+        "crc": 4075539536
+      }
+    ]
+  },
+  {
+    "path": "4.Model/木子晓汶版本3D模型/Out_stp1/BACK/metal_step.zip",
+    "members": [
+      {
+        "name": "mini8-cover1105.zip",
+        "bytes": 53724,
+        "crc": 3656048647
+      },
+      {
+        "name": "__MACOSX/._mini8-cover1105.zip",
+        "bytes": 294,
+        "crc": 2929577026
+      },
+      {
+        "name": "min-11-bra-connection.step",
+        "bytes": 767929,
+        "crc": 371903234
+      },
+      {
+        "name": "motor35-br-top.step",
+        "bytes": 4767294,
+        "crc": 118518871
+      },
+      {
+        "name": "motor42-br-top.step",
+        "bytes": 4751017,
+        "crc": 260455737
+      }
+    ]
+  },
+  {
+    "path": "5.Bom/dummy V2版本_bom.xlsx",
+    "members": [
+      {
+        "name": "[Content_Types].xml",
+        "bytes": 2143,
+        "crc": 1141495408
+      },
+      {
+        "name": "_rels/",
+        "bytes": 0,
+        "crc": 0
+      },
+      {
+        "name": "_rels/.rels",
+        "bytes": 735,
+        "crc": 3161864315
+      },
+      {
+        "name": "docProps/",
+        "bytes": 0,
+        "crc": 0
+      },
+      {
+        "name": "docProps/app.xml",
+        "bytes": 742,
+        "crc": 1568122425
+      },
+      {
+        "name": "docProps/core.xml",
+        "bytes": 606,
+        "crc": 2363680212
+      },
+      {
+        "name": "docProps/custom.xml",
+        "bytes": 529,
+        "crc": 1479997519
+      },
+      {
+        "name": "xl/",
+        "bytes": 0,
+        "crc": 0
+      },
+      {
+        "name": "xl/_rels/",
+        "bytes": 0,
+        "crc": 0
+      },
+      {
+        "name": "xl/_rels/workbook.xml.rels",
+        "bytes": 1403,
+        "crc": 921961918
+      },
+      {
+        "name": "xl/drawings/",
+        "bytes": 0,
+        "crc": 0
+      },
+      {
+        "name": "xl/drawings/_rels/",
+        "bytes": 0,
+        "crc": 0
+      },
+      {
+        "name": "xl/drawings/_rels/drawing1.xml.rels",
+        "bytes": 427,
+        "crc": 2623980630
+      },
+      {
+        "name": "xl/drawings/drawing1.xml",
+        "bytes": 6007,
+        "crc": 178480124
+      },
+      {
+        "name": "xl/media/",
+        "bytes": 0,
+        "crc": 0
+      },
+      {
+        "name": "xl/media/image1.png",
+        "bytes": 100121,
+        "crc": 1712787457
+      },
+      {
+        "name": "xl/media/image2.png",
+        "bytes": 68939,
+        "crc": 3907211896
+      },
+      {
+        "name": "xl/sharedStrings.xml",
+        "bytes": 23368,
+        "crc": 347004205
+      },
+      {
+        "name": "xl/styles.xml",
+        "bytes": 27766,
+        "crc": 654554595
+      },
+      {
+        "name": "xl/theme/",
+        "bytes": 0,
+        "crc": 0
+      },
+      {
+        "name": "xl/theme/theme1.xml",
+        "bytes": 6432,
+        "crc": 3499498828
+      },
+      {
+        "name": "xl/workbook.xml",
+        "bytes": 1416,
+        "crc": 3316561257
+      },
+      {
+        "name": "xl/worksheets/",
+        "bytes": 0,
+        "crc": 0
+      },
+      {
+        "name": "xl/worksheets/_rels/",
+        "bytes": 0,
+        "crc": 0
+      },
+      {
+        "name": "xl/worksheets/_rels/sheet1.xml.rels",
+        "bytes": 3119,
+        "crc": 1627053295
+      },
+      {
+        "name": "xl/worksheets/_rels/sheet6.xml.rels",
+        "bytes": 4047,
+        "crc": 1181796239
+      },
+      {
+        "name": "xl/worksheets/sheet1.xml",
+        "bytes": 23042,
+        "crc": 952292781
+      },
+      {
+        "name": "xl/worksheets/sheet2.xml",
+        "bytes": 11517,
+        "crc": 119786539
+      },
+      {
+        "name": "xl/worksheets/sheet3.xml",
+        "bytes": 12512,
+        "crc": 1019667741
+      },
+      {
+        "name": "xl/worksheets/sheet4.xml",
+        "bytes": 25532,
+        "crc": 1303542468
+      },
+      {
+        "name": "xl/worksheets/sheet5.xml",
+        "bytes": 28931,
+        "crc": 474470971
+      },
+      {
+        "name": "xl/worksheets/sheet6.xml",
+        "bytes": 8800,
+        "crc": 1847128114
+      }
+    ]
+  },
+  {
+    "path": "6.Docs/en.stsw-link004 (1).zip",
+    "members": [
+      {
+        "name": "STM32 ST-LINK Utility v4.6.0/",
+        "bytes": 0,
+        "crc": 0
+      },
+      {
+        "name": "STM32 ST-LINK Utility v4.6.0/setup.exe",
+        "bytes": 27651375,
+        "crc": 4064368881
+      }
+    ]
+  }
+]

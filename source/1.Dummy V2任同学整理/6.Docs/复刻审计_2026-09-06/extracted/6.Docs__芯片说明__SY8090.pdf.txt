@@ -1,0 +1,387 @@
+                                    Application Note: AN_SY8089/SY8089A
+                              High Efficiency 5.5V, 2A continuous, 3A peak, 1MHz
+                                                 Synchronous Step Down Regulator
+
+
+General Description                                                  Features
+The SY8089 and SY8089A are high-efficiency, high                     • Low RDS(ON) for internal switches
+frequency synchronous step-down DC-DC regulator IC                      (top/bottom):110mΩ/80mΩ
+capable of delivering up to 2A output current. The                   • 2.7-5.5V input voltage range
+SY8089 and SY8089A operate over a wide input                         • 2A continuous, 3A peak load current capability
+voltage range from 2.7V to 5.5V and integrate main                   • 1MHz switching frequency minimizes the external
+switch and synchronous switch with very low RDS(ON)                    components
+to minimize the conduction loss.                                     • Internal softstart limits the inrush current
+                                                                     • Reliable short circuit protection:
+Low output voltage ripple and small external inductor                         SY8089: Latch off protection
+and capacitor sizes are achieved with greater than                            SY8089A: Hic-cup mode protection
+1MHz switching frequency.
+                                                                     • Reliable over-voltage protection:
+                                                                              SY8089: Latch off protection
+SY8089 integrates short circuit and over-voltage latch
+                                                                              SY8089A: No latch off protection
+off protection.
+                                                                     • 100% dropout operation
+                                                                     • RoHS Compliant and Halogen Free
+                                                                     • Compact package: SOT23-5
+Ordering Information
+SY8089 □(□□)□
+                    Temperature Code                                 Applications
+                    Package Code
+                    Optional Spec Code                               •     LCD TV
+Temperature Range: -40°C to 85°C                                     •     Set Top Box
+ Ordering Number     Package type                     Note           •     Net PC
+   SY8089AAC           SOT23-5                                       •     Mini-Notebook PC
+  SY8089AAAC           SOT23-5                                       •     Access Point Router
+
+
+Typical Applications
+
+    VIN: 2.7-5.5V    4                   3 L1:2.2µH           VOUT: 1.8V
+                         IN         LX
+                                                                              Efficiency (%)
+
+
+
+
+                CIN                                    R1     C1     COUT
+               22µF                                   200k   22pF   22µFх2
+                                    FB   5
+                     1
+  ON/ OFF                EN                            R2
+                              GND                     100k
+                                2
+
+
+
+
+                    Figure 1.Schematic diagram                                                 Figure 2. Efficiency vs Load Current
+
+
+
+
+AN_SY8089/A Rev. 0.9A                        Silergy Corp. Confidential- Prepared for Customer Use Only 1
+                                                                                                 SY8089/8089A
+
+Pinout (top view)
+
+
+
+
+                                                             SOT23-5
+
+                               Part Number           Package type              Top Mark
+                                                                                        ①
+
+
+                               SY8089AAC               SOT23-5                   JXxyz
+                              SY8089AAAC               SOT23-5                   KVxyz
+                                   Note① ： x=year code, y=week code, z= lot number code
+
+    Pin Name          Pin Number                                        Pin Description
+       EN                  1            Enable control. Pull high to turn on. Do not float.
+      GND                  2            Ground pin.
+       LX                  3            Inductor pin. Connect this pin to the switching node of inductor.
+        IN                 4            Input pin. Decouple this pin to GND pin with at least 10µF ceramic cap.
+       FB                  5            Output Feedback Pin. Connect this pin to the center point of the output
+                                        resistor divider (as shown in Figure 1) to program the output voltage:
+                                        Vout=0.6*(1+R1/R2).
+
+
+Absolute Maximum Ratings (Note 1)
+Supply Input Voltage ----------------------------------------------------------------------------------------------- -0.3V to 6.0V
+Enable, FB Voltage------------------------------------------------------------------------------------------ -0.3V to VIN + 0.6V
+Power Dissipation, PD @ TA = 25°C,
+        SOT23-5 -------------------------------------------------------------------------------------------------------------- 0.6W
+Package Thermal Resistance (Note 2)
+         θ JA --------------------------------------------------------------------------------------------------------------- 170°C/W
+         θ JC ----------------------------------------------------------------------------------------------------------------130°C/W
+Junction Temperature Range ----------------------------------------- ------------------------------------------ -40°C to 150°C
+Lead Temperature (Soldering, 10 sec.) ----------------------------------------------------------------------------------- 260°C
+Storage Temperature Range ------------------------------------------------------------------------------------- -65°C to 150°C
+
+
+Recommended Operating Conditions (Note 3)
+Supply Input Voltage ------------------------------------------------------------------------------------------------ 2.7V to 5.5V
+Junction Temperature Range ------------------------------------------------------------------------------------ -40°C to 125°C
+Ambient Temperature Range ------------------------------------------------------------------------------------- -40°C to 85°C
+
+
+
+
+AN_SY8089/A Rev. 0.9A                     Silergy Corp. Confidential- Prepared for Customer Use Only 2
+                                                             SY8089/8089A
+Block Diagram
+
+
+
+
+                                   (SY8089)
+
+
+
+
+                                  (SY8089A)
+
+
+
+AN_SY8089/A Rev. 0.9A   Silergy Corp. Confidential- Prepared for Customer Use Only 3
+                                                                                         SY8089/8089A
+
+Electrical Characteristics
+(VIN = 5V, VOUT = 2.5V, L = 2.2µH, COUT = 22µF, TA = 25°C, unless otherwise specified)
+
+ Parameter                                  Symbol        Test Conditions                Min     Typ    Max      Unit
+ Input Voltage Range                        VIN                                          2.7            5.5      V
+ Quiescent Current                          IQ            IOUT=0,                                55              µA
+                                                          VFB=VREF ⋅ 105%
+ Shutdown Current                           ISHDN         EN=0                                   0.1    1        µA
+ Feedback Reference Voltage                 VREF                                         0.588   0.6    0.612    V
+ FB Input Current                           IFB           VFB=VIN                        -50            50       nA
+ PFET RON                                   RDS(ON),P                                            110             mΩ
+ NFET RON                                   RDS(ON),N                                            80              mΩ
+ PFET Current Limit                         ILIM                                         3.5                     A
+ EN rising threshold                        VENH                                         1.5                     V
+ EN falling threshold                       VENL                                                        0.4      V
+ Input UVLO threshold                       VUVLO                                                       2.5      V
+ UVLO hysteresis                            VHYS                                                 0.2             V
+ Oscillator Frequency                       FOSC          IOUT=500mA                             1               MHz
+ Short Circuit Protection Latch Off         VSCP                                                 0.25            V
+ Threshold
+ Min ON Time                                                                                     75              ns
+ Max Duty Cycle                                                                          100                     %
+ Soft Start Time                            TSS                                                  1.2             ms
+ Output Discharge Switch On                 RDISCH                                               50              Ω
+ Resistance
+ Thermal Shutdown Temperature               TSD                                                  160             °C
+
+
+Note 1: Stresses beyond the “Absolute Maximum Ratings” may cause permanent damage to the device. These are
+stress ratings only. Functional operation of the device at these or any other conditions beyond those indicated in the
+operational sections of the specification is not implied. Exposure to absolute maximum rating conditions for
+extended periods may affect device reliability.
+
+Note 2: Test condition: Device mounted on 2” x 2” FR-4 substrate PCB, 2oz copper, with minimum recommended
+pad on top layer and thermal vias to bottom layer ground plane.
+
+Note 3: The device is not guaranteed to function outside its operating conditions.
+
+
+
+
+AN_SY8089/A Rev. 0.9A                  Silergy Corp. Confidential- Prepared for Customer Use Only 4
+                                                                 SY8089/8089A
+Typical Performance Characteristics
+ Efficiency (%)
+
+
+
+
+                                                Efficiency (%)
+ Efficiency (%)
+
+
+
+
+AN_SY8089/A Rev. 0.9A   Silergy Corp. Confidential- Prepared for Customer Use Only 5
+                                                             SY8089/8089A
+
+
+
+
+AN_SY8089/A Rev. 0.9A   Silergy Corp. Confidential- Prepared for Customer Use Only 6
+                                                                                        SY8089/8089A
+                                                                              VOUT
+Operation Principle
+                                                                               R1
+SY8089 is a synchronous buck regulator IC that
+                                                                    FB
+integrates the PWM control, top and bottom switches
+on the same die to minimize the switching transition                GND        R2
+
+loss and conduction loss. With ultra low RDS(ON) power
+switches and proprietary PWM control, this regulator
+IC can achieve the highest efficiency and the highest         Input capacitor CIN:
+switch frequency simultaneously to minimize the               This ripple current through input capacitor is calculated
+external inductor and capacitor size, and thus achieving      as:
+the minimum solution footprint.
+                                                              ICIN_RMS =IOUT × D(1-D)
+Short Circuit Protection
+（SY8089）After the soft start is over, if the output           This formula has a maximum at VIN=2VOUT condition,
+voltage falls below 40% of the regulation level, IC will      where ICIN_RMS=IOUT/2. This simple worst-case
+turn off both power switches, entering short circuit          condition is commonly used for DC/DC design.
+protection. It will remain in this state until the IN or EN
+voltage is recycled.                                          With the maximum load current at 2.0A. A typical
+                                                              X5R or better grade ceramic capacitor with 6.3V rating
+(SY8089A) The frequency is folded back to about 30%           and more than 1 pcs 22µ F capacitor can handle this
+of the nominal frequency and the current limit is folded      ripple current well. To minimize the potential noise
+back to 3.0A to prevent the inductor current from             problem, ceramic capacitor should really be placed
+runaway and to reduce the power dissipation of the IC         close to the IN and GND pins. Care should be taken to
+under short circuit conditions.                               minimize the loop area formed by CIN, and IN/GND
+Over-voltage Protection                                       pins
+If the output voltage exceeds 120% of the regulation
+level for more than 20µs, IC will turn off both power         Output capacitor COUT:
+switches and turn on the discharge switch, entering           The output capacitor is selected to handle the output
+over-voltage protection. It will remain in this state until   ripple noise requirements. Both steady state ripple and
+IN or EN voltage is recycled.                                 transient requirements must be taken into consideration
+                                                              when selecting this capacitor. For the best performance,
+                                                              it is recommended to use X5R or better grade ceramic
+Applications Information                                      capacitor with 6.3V rating and greater than 22µF
+Because of the high integration in the SY8089 IC, the         capacitance.
+application circuit based on this regulator IC is rather
+simple. Only input capacitor CIN, output capacitor COUT,      Output inductor L:
+output inductor L and feedback resistors (R1 and R2)          There are several considerations in choosing this
+need to be selected for the targeted applications             inductor.
+specifications.                                               1) Choose the inductance to provide the desired
+                                                                  ripple current. It is suggested to choose the ripple
+Feedback resistor dividers R1 and R2:                             current to be about 40% of the maximum output
+Choose R1 and R2 to program the proper output                     current. The inductance is calculated as:
+voltage. To minimize the power consumption under
+light loads, it is desirable to choose large resistance
+                                                                       VOUT (1 − VOUT /VIN, MAX )
+values for both R1 and R2. A value of between 10k and             L=
+1M is highly recommended for both resistors. If Vout                    FSW × IOUT, MAX × 40%
+is 1.8V, R1=100k is chosen, then R2 can be calculated
+to be 50k.:                                                   where Fsw is the switching frequency and IOUT,MAX is
+       0.6V                                                   the maximum load current.
+R2 =            R 1 (Ω) .                                     The SY8089 regulator IC is quite tolerant of different
+     VOUT -0.6V                                               ripple current amplitude. Consequently, the final choice
+
+
+
+
+AN_SY8089/A Rev. 0.9A                  Silergy Corp. Confidential- Prepared for Customer Use Only 7
+                                                                                    SY8089/8089A
+of inductance can be slightly off the calculation value     Layout Design:
+without significantly impacting the performance.            The layout design of SY8089 regulator is relatively
+2) The saturation current rating of the inductor must       simple. For the best efficiency and minimum noise
+     be selected to be greater than the peak inductor       problems, we should place the following components
+     current under full load conditions.                    close to the IC: CIN, L, R1 and R2.
+
+                              VOUT(1-VOUT/VIN,MAX)          1) It is desirable to maximize the PCB copper area
+    ISAT, MIN > IOUT, MAX +                                 connecting to GND pin to achieve the best thermal and
+                                   2 ⋅ FSW ⋅ L
+                                                            noise performance. If the board space allowed, a
+                                                            ground plane is highly desirable.
+3) The DCR of the inductor and the core loss at the
+                                                            2) CIN must be close to Pins IN and GND. The loop
+   switching frequency must be low enough to
+                                                            area formed by CIN and GND must be minimized.
+   achieve the desired efficiency requirement. It is
+   desirable to choose an inductor with DCR<50mΩ
+                                                            3) The PCB copper area associated with LX pin must
+   to achieve a good overall efficiency.
+                                                            be minimized to avoid the potential noise problem.
+Enable Operation
+                                                            4) The components R1, R2, and the trace connecting to
+Pulling the EN pin low (<0.4V) will shut down the
+                                                            the FB pin must NOT be adjacent to the LX net on the
+device. During shut down mode, the SY8089 shutdown
+                                                            PCB layout to avoid the noise problem.
+current drops to lower than 0.1uA. Driving the EN pin
+high (>1.5V) will turn on the IC again.
+                                                            5) If the system chip interfacing with the EN pin has a
+                                                            high impedance state at shutdown mode and the IN pin
+Load Transient Considerations:
+                                                            is connected directly to a power source such as a LiIon
+The SY8089 regulator IC integrates the compensation
+                                                            battery, it is desirable to add a pull down 1MΩ resistor
+components to achieve good stability and fast transient
+                                                            between the EN and GND pins to prevent the noise
+responses. In some applications, adding a 22pF ceramic
+                                                            from falsely turning on the regulator at shutdown mode.
+cap in parallel with R1 may further speed up the load
+transient responses and is thus recommended for
+applications with large load transient step requirements.
+
+
+
+
+AN_SY8089/A Rev. 0.9A                     Silergy Corp. Confidential- Prepared for Customer Use Only 8
+                                                                                     SY8089/8089A
+                      SOT23-5 Package outline & PCB layout design
+
+                         0.55
+                                                                            2.80 - 3.10
+        2.40
+
+
+
+
+                                                                                                                  1.50 - 1.70
+                                                              2.70 - 3.00
+                                           0.80
+
+
+
+
+                    0.95 TYP                                                                         0.30 - 0.50
+                 Recommended Pad Layout
+
+
+
+
+                                                                                                     0.01 - 0.1
+                                                  0.25 REF
+
+
+
+
+                                                             1.0 - 1.3
+    0.1 - 0.15
+
+
+
+
+                                                                                          0.95 TYP
+
+                                      0.3 - 0.6                              1.90 TYP
+
+
+
+
+   Notes: All dimensions are in millimeters.
+          All dimensions don’t include mold flash & metal burr.
+
+
+
+
+AN_SY8089/A Rev. 0.9A               Silergy Corp. Confidential- Prepared for Customer Use Only 9
+                                                                            SY8089/8089A
+
+                               Taping & Reel Specification
+1. Taping orientation
+   SOT23-5
+                                         3.9/4.1                1.45/1.55
+                  7.7/8.3
+
+
+
+
+                                    Feeding direction
+2. Carrier Tape & Reel specification for packages
+                                                                    Reel
+                                                                    Width
+
+
+
+
+     Reel
+     Size
+
+
+
+
+             Tape
+  Package                     Pocket    Reel size      Reel       Trailer    Leader length   Qty per
+             width
+   types                    pitch(mm)    (Inch)     width(mm)   length(mm)      (mm)          reel
+             (mm)
+SOT23-5       8                4           7"           8.4         280          160          3000
+
+3. Others: NA
+
+
+
+
+AN_SY8089/A Rev. 0.9A              Silergy Corp. Confidential- Prepared for Customer Use Only 10
+

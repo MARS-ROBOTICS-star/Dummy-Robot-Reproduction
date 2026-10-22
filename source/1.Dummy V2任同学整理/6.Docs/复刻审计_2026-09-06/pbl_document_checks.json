@@ -1,0 +1,86 @@
+{
+  "documents": [
+    {
+      "path": "Dummy_V2项目驱动复刻方案_PBL版.md",
+      "lines": 814,
+      "characters": 39092,
+      "checked_full_paths": 33,
+      "missing_links": [],
+      "missing_paths": []
+    },
+    {
+      "path": "6.Docs/复刻审计_2026-09-06/PBL路线复核补充.md",
+      "lines": 65,
+      "characters": 4942,
+      "checked_full_paths": 2,
+      "missing_links": [],
+      "missing_paths": []
+    }
+  ],
+  "experiments": [
+    {
+      "experiment": "E0",
+      "questions": 7
+    },
+    {
+      "experiment": "E1",
+      "questions": 7
+    },
+    {
+      "experiment": "E2",
+      "questions": 7
+    },
+    {
+      "experiment": "E3",
+      "questions": 7
+    },
+    {
+      "experiment": "E4",
+      "questions": 7
+    },
+    {
+      "experiment": "E5",
+      "questions": 7
+    },
+    {
+      "experiment": "E6",
+      "questions": 7
+    },
+    {
+      "experiment": "E7",
+      "questions": 7
+    },
+    {
+      "experiment": "E8",
+      "questions": 7
+    },
+    {
+      "experiment": "E9",
+      "questions": 7
+    },
+    {
+      "experiment": "E10",
+      "questions": 7
+    },
+    {
+      "experiment": "E11",
+      "questions": 7
+    },
+    {
+      "experiment": "E12",
+      "questions": 7
+    },
+    {
+      "experiment": "E13",
+      "questions": 7
+    }
+  ],
+  "source_references": 20,
+  "staged_firmware_tasks": 12,
+  "prerequisite_classes": 6,
+  "purchase_classes": 6,
+  "original_artifacts_hash_checked": 3965,
+  "changed_artifacts": [],
+  "arithmetic_checks": "passed",
+  "limitation": "Document/static integrity checks only. No ARM build or hardware test."
+}

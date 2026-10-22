@@ -1,0 +1,10 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lbz/Dummy-Robot/source/1.Dummy V2任同学整理/2.Firmware/dummy-42motor-fw/startup/startup_stm32f103xb.s
+

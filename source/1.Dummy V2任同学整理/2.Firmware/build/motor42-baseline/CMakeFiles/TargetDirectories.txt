@@ -1,0 +1,3 @@
+/home/lbz/Dummy-Robot/source/1.Dummy V2任同学整理/2.Firmware/build/motor42-baseline/CMakeFiles/Ctrl-Step-STM32-fw.elf.dir
+/home/lbz/Dummy-Robot/source/1.Dummy V2任同学整理/2.Firmware/build/motor42-baseline/CMakeFiles/edit_cache.dir
+/home/lbz/Dummy-Robot/source/1.Dummy V2任同学整理/2.Firmware/build/motor42-baseline/CMakeFiles/rebuild_cache.dir

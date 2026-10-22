@@ -1,0 +1,9 @@
+# 超过 GitHub 100MB 单文件限制的原始压缩包
+source/*.zip
+source/*.rar
+
+# 上游仓库克隆自带的 git 元数据
+source/dummy/.git/
+
+# 本地构建产物与日志
+logs/
