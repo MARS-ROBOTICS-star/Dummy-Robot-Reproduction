@@ -1,0 +1,66 @@
+Protel Design System Design Rule Check
+PCB File : C:\AD-Design\work\Dummy\35-motor\hardware\Motor-35.PcbDoc
+Date     : 11/13/2023
+Time     : 10:27:45 AM
+
+Processing Rule : Clearance Constraint (Gap=0.102mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.102mm) (Max=1.27mm) (Preferred=0.254mm) ((InNet('VDD_SYS_3.3V') OR InNet('VDD_AV_3.3V') OR InNet('VDD_5V') OR InNet('VDD1V2-SYS') OR InNet('VDD1V1-EPHY') OR InNet('VDD-CPUX') OR InNet('VDD-CPUS') OR InNet('VDD-CPUFB') OR InNet('VCC-DRAM')))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.102mm) (Max=1.27mm) (Preferred=0.254mm) ((InNet('AGND') OR InNet('GND')))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.102mm) (Max=254mm) (Preferred=0.102mm) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.203mm) (Max=254mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.051mm) (Disabled)(All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0mm) (IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=0mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Room Interface (Bounding Region = (146.346mm, 50.181mm, 197.146mm, 75.581mm) (Disabled)(InComponentClass('Interface'))
+Rule Violations :0
+
+Processing Rule : Room Drive (Bounding Region = (147.793mm, 50.181mm, 198.593mm, 75.581mm) (Disabled)(InComponentClass('Drive'))
+Rule Violations :0
+
+Processing Rule : Room MCU (Bounding Region = (147.565mm, 50.512mm, 198.365mm, 75.912mm) (Disabled)(InComponentClass('MCU'))
+Rule Violations :0
+
+Processing Rule : Room Port (Bounding Region = (147.463mm, 50.664mm, 198.263mm, 76.064mm) (Disabled)(InComponentClass('Port'))
+Rule Violations :0
+
+Processing Rule : Room Power (Bounding Region = (148.124mm, 50.537mm, 198.924mm, 75.937mm) (Disabled)(InComponentClass('Power'))
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+
+Violations Detected : 0
+Waived Violations : 0
+Time Elapsed        : 00:00:01

@@ -1,0 +1,531 @@
+*************************************************************
+FileName = REF-Base.GBR
+AutoAperture = True
+*************************************************************
+Generating : Mechanical 15
+      File : REF-Base.GM15
+
+    Adding Layer      : Mechanical 15
+
+
+Used DCodes :
+    D16
+    D127
+    D131
+    D132
+    D133
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 14
+      File : REF-Base.GM14
+
+    Adding Layer      : Mechanical 14
+
+
+Used DCodes :
+    D132
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 13
+      File : REF-Base.GM13
+
+    Adding Layer      : Mechanical 13
+
+
+Used DCodes :
+    D131
+    D132
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 12
+      File : REF-Base.GM12
+
+    Adding Layer      : Mechanical 12
+
+
+Used DCodes :
+    D16
+    D130
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 10
+      File : REF-Base.GM10
+
+    Adding Layer      : Mechanical 10
+
+
+Used DCodes :
+    D16
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 1
+      File : REF-Base.GM1
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+    D17
+    D128
+    D129
+*************************************************************
+
+*************************************************************
+Generating : Keep-Out Layer
+      File : REF-Base.GKO
+
+    Adding Layer      : Keep-Out Layer
+
+
+Used DCodes :
+    D17
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : REF-Base.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D15
+    D16
+    D17
+    D20
+    D21
+    D77
+    D126
+    D127
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : REF-Base.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom2
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D23
+    D25
+    D31
+    D35
+    D107
+    D108
+    D109
+    D110
+    D111
+    D112
+    D113
+    D114
+    D115
+    D116
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : REF-Base.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom2
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D46
+    D47
+    D49
+    D51
+    D56
+    D59
+    D69
+    D70
+    D71
+    D72
+    D73
+    D74
+    D75
+    D76
+    D114
+    D117
+    D118
+    D119
+    D120
+    D121
+    D122
+    D123
+    D124
+    D125
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : REF-Base.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D26
+    D32
+    D36
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
+    D57
+    D58
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+    D65
+    D66
+    D67
+    D68
+    D69
+    D70
+    D71
+    D72
+    D73
+    D74
+    D75
+    D76
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : REF-Base.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : REF-Base.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+*************************************************************
+
+*************************************************************
+Generating : Top Pad Master
+      File : REF-Base.GPT
+
+    Adding Layer      : Top1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D86
+    D87
+    D88
+    D89
+    D90
+    D91
+    D92
+*************************************************************
+
+*************************************************************
+Generating : Bottom Pad Master
+      File : REF-Base.GPB
+
+    Adding Layer      : Bottom2
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D23
+    D25
+    D31
+    D35
+    D86
+    D87
+    D88
+    D89
+    D90
+    D91
+    D92
+    D107
+    D108
+    D109
+    D110
+    D111
+    D112
+    D113
+    D114
+    D115
+    D116
+*************************************************************
+
+*************************************************************
+Generating : Bottom2
+      File : REF-Base.GBL
+
+    Adding Layer      : Bottom2
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D16
+    D17
+    D23
+    D25
+    D31
+    D35
+    D77
+    D78
+    D79
+    D80
+    D86
+    D87
+    D88
+    D89
+    D90
+    D91
+    D92
+    D93
+    D94
+    D95
+    D107
+    D108
+    D109
+    D110
+    D111
+    D112
+    D113
+    D114
+    D115
+    D116
+*************************************************************
+
+*************************************************************
+Generating : GND
+      File : REF-Base.GP2
+
+    Adding Layer      : GND
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D77
+    D96
+    D97
+    D99
+    D100
+    D101
+    D102
+    D103
+    D104
+    D105
+    D106
+*************************************************************
+
+*************************************************************
+Generating : VCC
+      File : REF-Base.GP1
+
+    Adding Layer      : VCC
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D77
+    D96
+    D97
+    D98
+    D99
+    D100
+    D101
+    D102
+    D103
+    D104
+    D105
+*************************************************************
+
+*************************************************************
+Generating : Top1
+      File : REF-Base.GTL
+
+    Adding Layer      : Top1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D16
+    D17
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D77
+    D78
+    D79
+    D80
+    D81
+    D82
+    D83
+    D84
+    D85
+    D86
+    D87
+    D88
+    D89
+    D90
+    D91
+    D92
+    D93
+    D94
+    D95
+*************************************************************
+
+*************************************************************
+Generating : Drill Drawing
+      File : REF-Base.GD1
+
+    Adding Drill Pair : Top1-Bottom2
+
+    Adding Layer      : Drill Drawing
+
+
+Used DCodes :
+    D132
+    D134
+*************************************************************
+
+*************************************************************
+Generating : Drill Guide
+      File : REF-Base.GG1
+
+    Adding Drill Pair : Top1-Bottom2
+
+    Adding Layer      : Drill Guide
+
+
+Used DCodes :
+    D132
+*************************************************************
+

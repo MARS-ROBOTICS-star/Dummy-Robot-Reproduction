@@ -7,3 +7,13 @@ source/dummy/.git/
 
 # 本地构建产物与日志
 logs/
+
+# Altium 自动备份与预览缓存（打开工程即自动生成）
+History/
+__Previews/
+*.PrjPcbStructure
+*.SchDocPreview
+*.PcbDocPreview
+
+# 失败的 gitee 克隆残留：只有 .git 骨架，零对象、无工作区文件
+source/dummy2/

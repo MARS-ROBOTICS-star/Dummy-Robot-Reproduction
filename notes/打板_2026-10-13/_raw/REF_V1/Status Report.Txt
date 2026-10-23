@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [REF-Base.PrjPCB]
+   Generated File[REF-Base.TXT]
+   Generated File[REF-Base.LDP]
+   Generated File[REF-Base.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 10:25:23 AM On 11/13/2023

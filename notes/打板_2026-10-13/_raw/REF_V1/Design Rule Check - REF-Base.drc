@@ -1,0 +1,68 @@
+Protel Design System Design Rule Check
+PCB File : C:\AD-Design\work\Dummy\REF\REF-Base\REF-Base.PcbDoc
+Date     : 11/13/2023
+Time     : 10:23:03 AM
+
+WARNING: Design contains shelved or modified (but not repoured) polygons. The result of DRC is not correct. Recommended to restore/repour all polygons and proceed with DRC again
+   Polygon named: GND_L01_P014
+   Polygon named: NETC16_2_L01_P010
+   Polygon named: VCC_5V_L04_P018
+   Polygon named: 3V3_L04_P021
+
+Processing Rule : Clearance Constraint (Gap=0.152mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.203mm) (InNetClass('Logo')),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+   Violation between Short-Circuit Constraint: Between Pad U10-(18.153mm,-2.341mm) on Bottom2 And Via (18.11mm,-2.261mm) from Top1 to Bottom2 Location : [X = 173.58mm][Y = 128.877mm]
+Rule Violations :1
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+   Violation between Un-Routed Net Constraint: Via (18.11mm,-2.261mm) from Top1 to Bottom2 Dead Copper - Net Not Assigned.
+Rule Violations :1
+
+Processing Rule : Width Constraint (Min=0.003mm) (Max=2.54mm) (Preferred=0.254mm) (InNetClass('Logo'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.102mm) (Max=254mm) (Preferred=0.102mm) (All)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.102mm) (Max=1.27mm) (Preferred=0.254mm) ((InNet('VDD_SYS_3.3V') OR InNet('VDD_AV_3.3V') OR InNet('VDD_5V') OR InNet('VDD1V2-SYS') OR InNet('VDD1V1-EPHY') OR InNet('VDD-CPUX') OR InNet('VDD-CPUS') OR InNet('VDD-CPUFB') OR InNet('VCC-DRAM')))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.102mm) (Max=1.27mm) (Preferred=0.254mm) ((InNet('AGND') OR InNet('GND')))
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.203mm) (Max=254mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.051mm) (Disabled)(All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0mm) (IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=0mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Room Main (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (Disabled)(InComponentClass('Main'))
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+
+Violations Detected : 2
+Waived Violations : 0
+Time Elapsed        : 00:00:01

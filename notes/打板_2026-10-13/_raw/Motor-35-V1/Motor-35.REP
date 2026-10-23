@@ -1,0 +1,447 @@
+*************************************************************
+FileName = Motor-35.GBR
+AutoAperture = True
+*************************************************************
+Generating : Keep-Out Layer
+      File : Motor-35.GKO
+
+    Adding Layer      : Keep-Out Layer
+
+
+Used DCodes :
+    D13
+*************************************************************
+
+*************************************************************
+Generating : Top1
+      File : Motor-35.GTL
+
+    Adding Layer      : Top1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D13
+    D15
+    D16
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D57
+    D58
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+    D65
+    D66
+    D67
+    D68
+    D69
+    D70
+    D71
+    D72
+    D73
+    D74
+*************************************************************
+
+*************************************************************
+Generating : Signal2
+      File : Motor-35.G1
+
+    Adding Layer      : Signal2
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D15
+    D63
+    D69
+    D70
+    D71
+    D73
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 15
+      File : Motor-35.GM15
+
+    Adding Layer      : Mechanical 15
+
+
+Used DCodes :
+    D14
+    D15
+    D89
+    D90
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 14
+      File : Motor-35.GM14
+
+    Adding Layer      : Mechanical 14
+
+
+Used DCodes :
+    D90
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 13
+      File : Motor-35.GM13
+
+    Adding Layer      : Mechanical 13
+
+
+Used DCodes :
+    D89
+    D90
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 1
+      File : Motor-35.GM1
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+    D13
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : Motor-35.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D11
+    D15
+    D16
+    D17
+    D21
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : Motor-35.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom4
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D27
+    D28
+    D33
+    D75
+    D76
+    D77
+    D78
+    D79
+    D80
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : Motor-35.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom4
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D42
+    D43
+    D47
+    D52
+    D53
+    D54
+    D55
+    D56
+    D77
+    D82
+    D83
+    D84
+    D85
+    D86
+    D87
+    D88
+*************************************************************
+
+*************************************************************
+Generating : Top Pad Master
+      File : Motor-35.GPT
+
+    Adding Layer      : Top1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D68
+    D69
+    D70
+*************************************************************
+
+*************************************************************
+Generating : Bottom Pad Master
+      File : Motor-35.GPB
+
+    Adding Layer      : Bottom4
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D27
+    D28
+    D33
+    D68
+    D69
+    D70
+    D75
+    D76
+    D77
+    D78
+    D79
+    D80
+*************************************************************
+
+*************************************************************
+Generating : Bottom4
+      File : Motor-35.GBL
+
+    Adding Layer      : Bottom4
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D15
+    D27
+    D28
+    D33
+    D57
+    D58
+    D59
+    D60
+    D61
+    D63
+    D68
+    D69
+    D70
+    D71
+    D72
+    D73
+    D74
+    D75
+    D76
+    D77
+    D78
+    D79
+    D80
+    D81
+    D82
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 10
+      File : Motor-35.GM10
+
+    Adding Layer      : Mechanical 10
+
+
+Used DCodes :
+    D15
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 12
+      File : Motor-35.GM12
+
+    Adding Layer      : Mechanical 12
+
+
+Used DCodes :
+    D15
+*************************************************************
+
+*************************************************************
+Generating : Gnd3
+      File : Motor-35.G2
+
+    Adding Layer      : Gnd3
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D15
+    D63
+    D69
+    D70
+    D71
+    D72
+    D73
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : Motor-35.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D24
+    D32
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : Motor-35.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : Motor-35.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+*************************************************************
+
+*************************************************************
+Generating : Drill Drawing
+      File : Motor-35.GD1
+
+    Adding Drill Pair : Top1-Bottom4
+
+    Adding Layer      : Drill Drawing
+
+
+Used DCodes :
+    D90
+    D91
+*************************************************************
+
+*************************************************************
+Generating : Drill Guide
+      File : Motor-35.GG1
+
+    Adding Drill Pair : Top1-Bottom4
+
+    Adding Layer      : Drill Guide
+
+
+Used DCodes :
+    D90
+*************************************************************
+
