@@ -285,6 +285,8 @@ Dummy 是稚晖君(peng-zhihui)开源的桌面级 **6 自由度机械臂**。本
 
 **21. ✅ 35 电机固件与 REF 主控固件在 Linux 下编不过 —— 已于 2026-11-02 修复** —— 35 侧 3 个文件的 `stdint-gcc.h` 已改为 `<stdint.h>`(42 侧 2026-09-06 就改过);REF 侧 `Bsp/imu/` 的 3 处 `#include "mpu6050.hpp"` 已改为实际文件名 `"MPU6050.hpp"`(Linux 区分大小写,Windows 不区分所以上游没暴露)。三块板的固件现均可构建,产物在 `<V2>/2.Firmware/build/{motor42,motor35,ref}-baseline/`。编译方法与容量数字见本节第 15 条、第八章 build 目录一节,以及 `notes/七块板测试记录.md` 一·四。
 
+**21b. ⚠️ REF 没接任何电机板时 OLED 不亮 —— `dummy.Init()` 的 CAN 发送永久阻塞(2026-11-02 定位)** —— `Main()` 里 `dummy.Init()` → `SetCommandMode()` → `SetJointAcceleration()` 连发 6 帧 CAN。`Bsp/communication/interface_can.cpp` 的 `CanSendMessage()` 以 `osWaitForever` 获取计数为 1 的 `sem_can1_tx`,**只在发送成功回调里释放**;总线上无节点回 ACK 时,`AutoRetransmission = DISABLE` 使该帧以 TERR 失败,HAL 不调 Complete 回调、`tx_error()` 是空函数 → 第 2 帧永久等待,Main 挂起,`oled.Init()` 永远不执行(CPU 停在 `prvIdleTask`)。**不要误判成"卡在等 MPU6050"**,IMU 死等循环在它后面。当前已临时注释 `UserApp/main.cpp` 的 `dummy.Init();`(接机械臂前须恢复);不改固件的办法是总线上接一块通电的电机板。根治需给 `CanSendMessage()` 加超时并在失败/中止时释放信号量。详见 `notes/七块板测试记录.md` 一·四c。
+
 **22. 四块板都是 Altium,且三块缺工程文件** —— motor42/motor35/ref-controller 都**没有 `.PrjPCB`**(只有 LedRing 有),Altium 里需手动建工程再 Add Existing。注意:`嵌入式学习/` 里的 PCB 课程教的是**立创EDA**,与本项目硬件不是一套工具。
 
 **23. `.html` 是 InteractiveHtmlBom,器件型号 grep 不到** —— 数据在 `LZString.decompressFromBase64()` 里,必须解压(第九章有可复用脚本)。HTML title 写 "Interactive BOM for KiCAD" 只是该工具默认标题,工程实际是 Altium 导出。

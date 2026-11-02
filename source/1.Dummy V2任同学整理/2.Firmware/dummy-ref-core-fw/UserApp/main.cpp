@@ -160,7 +160,10 @@ void Main(void)
     InitCommunication();
 
     // Init Robot.
-    dummy.Init();
+    // TEMP: without any motor board on the CAN bus, the first frame gets no ACK,
+    // the TX semaphore is never released and this call blocks forever (OLED never inits).
+    // Restore once motor boards are connected.
+    // dummy.Init();
 
     // Init IMU.
     do
