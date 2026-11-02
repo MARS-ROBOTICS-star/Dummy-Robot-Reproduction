@@ -48,6 +48,11 @@ void MX_CAN_Init(void);
 /* USER CODE BEGIN Prototypes */
 void CAN_Send(CAN_TxHeaderTypeDef* pHeader, uint8_t* data);
 
+/* 发送丢帧 / 接收取帧失败的累计次数，供调试器或上层查询。
+   原实现在这两种情况下调 Error_Handler()，会让板子永久卡死。 */
+extern volatile uint32_t canTxDropCount;
+extern volatile uint32_t canRxErrorCount;
+
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

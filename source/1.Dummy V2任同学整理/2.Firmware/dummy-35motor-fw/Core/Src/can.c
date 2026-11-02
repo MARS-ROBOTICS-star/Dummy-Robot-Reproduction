@@ -30,6 +30,13 @@ uint8_t TxData[8];
 uint8_t RxData[8];
 uint32_t TxMailbox;
 
+/* 发送失败的丢帧计数。原实现在发送失败时直接调 Error_Handler()
+   (__disable_irq() + while(1))，总线繁忙 / 主控掉线 / 未接终端电阻时，
+   一次发送失败就让关节板永久卡死，必须断电重启。现改为丢帧并在此计数。 */
+volatile uint32_t canTxDropCount = 0;
+/* 接收取帧失败计数（原来同样会死锁）。 */
+volatile uint32_t canRxErrorCount = 0;
+
 /* USER CODE END 0 */
 
 CAN_HandleTypeDef hcan;
@@ -178,11 +185,25 @@ void HAL_CAN_MspDeInit(CAN_HandleTypeDef* canHandle)
 }
 
 /* USER CODE BEGIN 1 */
+/* 等空邮箱的最大轮询次数。CAN_Send 由 CAN RX ISR（抢占优先级 3）调用，
+   而 20 kHz 电机控制环跑在 TIM4 ISR（抢占优先级 0），所以这里的自旋
+   不会拖慢控制环。注意不能用 HAL_GetTick() 做超时：SysTick 的优先级
+   低于本 ISR，uwTick 在这里根本不会递增。 */
+#define CAN_TX_SPIN_LIMIT 2000U
+
 void CAN_Send(CAN_TxHeaderTypeDef* pHeader, uint8_t* data)
 {
+    /* 三个发送邮箱可能短时占满，自旋等一个空出来；等不到就丢这一帧。
+       这里绝不能调 Error_Handler()，那会永久卡死关节板。 */
+    volatile uint32_t spin = CAN_TX_SPIN_LIMIT;
+    while (HAL_CAN_GetTxMailboxesFreeLevel(&hcan) == 0U && spin != 0U)
+    {
+        spin--;
+    }
+
     if (HAL_CAN_AddTxMessage(&hcan, pHeader, data, &TxMailbox) != HAL_OK)
     {
-        Error_Handler();
+        canTxDropCount++;
     }
 }
 
@@ -191,8 +212,10 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef* CanHandle)
     /* Get RX message */
     if (HAL_CAN_GetRxMessage(CanHandle, CAN_RX_FIFO0, &RxHeader, RxData) != HAL_OK)
     {
-        /* Reception Error */
-        Error_Handler();
+        /* 取帧失败：计数后直接返回。原实现调 Error_Handler() 会死锁；
+           而继续往下走会把上一帧残留的 RxHeader / RxData 当成新帧处理。 */
+        canRxErrorCount++;
+        return;
     }
 
     uint8_t id = (RxHeader.StdId >> 7); // 4Bits ID & 7Bits Msg
