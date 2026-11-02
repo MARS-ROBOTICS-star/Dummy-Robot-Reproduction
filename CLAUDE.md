@@ -18,9 +18,17 @@
 2. **只有主控板用 FreeRTOS**。42/35 关节电机固件是纯裸机 + 定时器中断,别去那里找 RTOS 代码;减速比也不在电机固件里,在主控 `dummy_robot.cpp`。
 3. **执行计划以 `notes/Dummy_V2复刻路线图.md` 为准**。`<V2>/` 顶层那 4 份旧方案(初稿 / 审计修订版 / PBL版)仅作技术参考,路线图正文已明文声明这一点。
 
-## 项目现状
+## 项目现状(2026-11-02)
 
-当前处于路线图的**阶段 0「打地基」**:Motor-42 固件已能在 Linux 编译(产物在 `source/1.Dummy V2任同学整理/2.Firmware/build/motor42-baseline/`),正在学江协科技 STM32 课程,**手上还没有 Dummy 硬件**。
+**硬件**:7 块板(42×3、35×3、REF×1)已焊完,断电与上电测试全部通过。42-3 的 STM32 和 CAN 芯片 U5 被 24 V 事故打坏,等备件。详见 `notes/七块板测试记录.md`。
+
+**固件**:42 / 35 / REF 三份固件都已能在 Linux + `arm-none-eabi-gcc 10.3.1` 下编译,产物在 `<V2>/2.Firmware/build/{motor42,motor35,ref}-baseline/`。编译方法与 Linux 适配改动见 `notes/七块板测试记录.md` 一·四。
+
+**烧录**:42-1、42-2 已烧(但是 CAN 死锁修复**之前**的版本,需重烧);35×3 与 REF 待烧。工具是 Windows 侧的 STM32CubeProgrammer,本机 Linux 没装烧录工具。
+
+**已修的固件缺陷**:电机板 `can.c` 的 `CAN_Send` / 接收回调失败即死锁(2026-11-02,42 与 35 同步)。遗留 `AutoBusOff = DISABLE` 无 bus-off 恢复逻辑。
+
+同时在学江协科技 STM32 课程。
 
 ## 路径简写
 

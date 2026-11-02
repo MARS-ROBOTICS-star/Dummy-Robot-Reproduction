@@ -250,9 +250,9 @@ Dummy 是稚晖君(peng-zhihui)开源的桌面级 **6 自由度机械臂**。本
 
 ### C. 会烧板子 / 卡死硬件的代码缺陷
 
-**14. 🔴 电机板 `CAN_Send` 失败直接进 `Error_Handler()`** —— 位置 `<V2>/2.Firmware/dummy-42motor-fw/Core/Src/can.c:181-187`,`Error_Handler` 实现在同固件 `Core/Src/main.c:171-179`(`__disable_irq()` + `while(1){}`)。总线繁忙、主控掉线、未接终端电阻时,**一次发送失败就让关节板永久卡死,必须断电重启**。配合 `AutoRetransmission = DISABLE` 风险更高。这是全项目最该先改的一处。
+**14. ✅ 电机板 `CAN_Send` 失败即死锁 —— 已于 2026-11-02 修复** —— 原实现在 `Core/Src/can.c` 的 `CAN_Send()` 与 `HAL_CAN_RxFifo0MsgPendingCallback()` 里失败即调 `Error_Handler()`(实现在 `Core/Src/main.c:171-179`,`__disable_irq()` + `while(1){}`),总线繁忙、主控掉线、未接终端电阻时**一次失败就让关节板永久卡死,必须断电重启**。现已改为:`CAN_Send()` 先自旋等空发送邮箱(上限 `CAN_TX_SPIN_LIMIT = 2000` 次轮询),等不到就丢帧并 `canTxDropCount++`;接收回调改为 `canRxErrorCount++` 后 `return`(不能只删 `Error_Handler()`,否则会把上一帧残留的 `RxHeader`/`RxData` 当新帧处理)。两个计数器在 `can.h` 里 `extern`。42 / 35 两份固件同步改,改完 `can.c`/`can.h` 仍逐字节相同。过程见 `notes/七块板测试记录.md` 一·四b。**仍遗留**:`AutoBusOff = DISABLE` 且没有 bus-off 软件恢复逻辑。
 
-**15. 🔴 电机板链接脚本把整片 128K Flash 都给代码** —— `<V2>/2.Firmware/dummy-42motor-fw/STM32F103CBTx_FLASH.ld`,没为 0x08017C00 的 32K 编码器标定区保留。当前 Debug 构建约 73 KB,余约 22 KB,**代码膨胀后会静默覆盖标定数据**(审计 A06 同指此项)。
+**15. 🔴 电机板链接脚本把整片 128K Flash 都给代码** —— `<V2>/2.Firmware/dummy-42motor-fw/STM32F103CBTx_FLASH.ld`,没为 0x08017C00 的 32K 编码器标定区保留。当前 Debug 构建 74.5 KB(含 CAN 修复),余约 22.2 KB,**代码膨胀后会静默覆盖标定数据**(审计 A06 同指此项)。
 
 **16. 超前角补偿系数从未针对 MT6816 重标** —— `Motor::Controller::CompensateAdvancedAngle()` 自带注释 *"The code is for DPS series sensors, need to measured and renew for TLE5012/MT6816."* 这是已知遗留,影响高速性能。
 
@@ -283,7 +283,7 @@ Dummy 是稚晖君(peng-zhihui)开源的桌面级 **6 自由度机械臂**。本
 
 ### E. 环境与工具链
 
-**21. 35 电机固件在当前工具链下很可能编不过** —— 42 侧 4 个文件已于 2026-09-06 本地修补(`stdint-gcc.h` → `<stdint.h>`),35 保持上游原样未修。
+**21. ✅ 35 电机固件与 REF 主控固件在 Linux 下编不过 —— 已于 2026-11-02 修复** —— 35 侧 3 个文件的 `stdint-gcc.h` 已改为 `<stdint.h>`(42 侧 2026-09-06 就改过);REF 侧 `Bsp/imu/` 的 3 处 `#include "mpu6050.hpp"` 已改为实际文件名 `"MPU6050.hpp"`(Linux 区分大小写,Windows 不区分所以上游没暴露)。三块板的固件现均可构建,产物在 `<V2>/2.Firmware/build/{motor42,motor35,ref}-baseline/`。编译方法与容量数字见本节第 15 条、第八章 build 目录一节,以及 `notes/七块板测试记录.md` 一·四。
 
 **22. 四块板都是 Altium,且三块缺工程文件** —— motor42/motor35/ref-controller 都**没有 `.PrjPCB`**(只有 LedRing 有),Altium 里需手动建工程再 Add Existing。注意:`嵌入式学习/` 里的 PCB 课程教的是**立创EDA**,与本项目硬件不是一套工具。
 
@@ -627,7 +627,7 @@ Motor#1 P2(OUT) ──(反向线)──> Motor#2 P1(IN) ──(反向线)──>
 | A05 | P0 | 编码器有效性与失联保护没闭合到安全状态 | `mt6816_base.cpp:25-56` 读到 parity 和 `noMagFlag` 但失败仍沿用旧角度；无通用命令存活超时停机；`main.cpp:50-56` **默认关闭堵转保护并强制关闭温度监视**；默认 1 A 控制限流与 2 A 校准电流独立 |
 | A06 | P1 | Flash 存储地址存在但链接器未保护保留区 | 校准表 `0x08017C00` 长 32 KiB，参数区 `0x0801FC00` 长 1 KiB；程序从 `0x08000000` 起只有 **95 KiB** 可用，而 `.ld` 仍授权整个 128 KiB |
 | A07 | P0 | `!STOP` 不是真正急停 | `EmergencyStop()` 只「移动到当前位置」+ `isEnabled=false` + 清队列，**不调用节点失能接口**；`MoveJ()` 目标等于当前位置时出现 `0/0` 路径，非法浮点可能进入 CAN |
-| A08 | P0 | CAN 长度、节点与发送错误处理不足 | `can_protocol.cpp:22-32` 由标准 ID 得到 0~15 节点号直接索引 `motorJ[id]`，**数组只有 7 个元素，7~15 越界**；未验证 DLC/IDE/RTR；电机端 `CAN_Send()` 失败直接进关中断死循环的 `Error_Handler()` |
+| A08 | P0 | CAN 长度、节点与发送错误处理不足 | `can_protocol.cpp:22-32` 由标准 ID 得到 0~15 节点号直接索引 `motorJ[id]`，**数组只有 7 个元素，7~15 越界**；未验证 DLC/IDE/RTR；电机端 `CAN_Send()` 失败直接进关中断死循环的 `Error_Handler()`(**电机侧已于 2026-11-02 修复**,见「五、已知坑」第 14 条;主控侧数组越界仍未处理) |
 | A09 | P1 | REF 不支持「拔掉四轴就变两轴」 | 六轴发送循环与到达掩码 `0b1111110` 硬编码；`Homing/Resting` 等待缺席节点可能永不结束。IMU 缺失会阻止后续任务启动（但通信已先初始化） |
 | A10 | P0 | 两种「校准」完全不同 | 电机编码器校准（本地按键 / CAN `0x02`，32 KiB 映射表）≠ REF `!CALIBRATION`（`CalibrateHomeOffset()`，会**使能所有节点、调整 J2/J3 电流、两次写零偏、自动收拢并重启**）。节点 ID 每次启动被三位拨码覆盖，CAN `0x11` 写入不持久 |
 | A11 | P1 | REF 命令解析和队列边界需专项修复 | `sscanf` 返回数量未检查；`std::string::find` 是子串匹配不是完整命令匹配；命令队列固定 64 字节，`Push()` 直接传 `c_str()` 有越界读/截断风险 |
@@ -1305,7 +1305,7 @@ integral += acc;  value += integral / CONTROL_FREQUENCY;  integral %= CONTROL_FR
 | `Core/Src/main.c` | HAL 入口 `main()` 与时钟树 | `HAL_Init()` → `SystemClock_Config()` → `MX_GPIO_Init, MX_DMA_Init, MX_ADC1_Init, MX_USART1_UART_Init, MX_CAN_Init, MX_SPI1_Init, MX_TIM2_Init, MX_TIM3_Init, MX_TIM4_Init, MX_TIM1_Init` → **`Main()`**(C++ 应用入口,永不返回)→ 空 `while(1)`。时钟:`HSE_ON`(**12MHz**,见 `stm32f1xx_hal_conf.h`)、`PLLSOURCE_HSE`、`PLLMUL = RCC_PLL_MUL6` → **SYSCLK = 72MHz**;`AHB=DIV1`(72M)、`APB1=DIV2`(**36M**)、`APB2=DIV1`(72M)、`FLASH_LATENCY_2`;ADC 时钟 `RCC_ADCPCLK2_DIV6`(12MHz)。`Error_Handler()` = `__disable_irq()` + 死循环 |
 | `Core/Src/stm32f1xx_it.c` | **中断向量实现(重手工改动,README 专门警告)** | `extern "C"` 声明 `Tim1Callback100Hz/Tim3CaptureCallback/Tim4Callback20kHz/GpioPin7InterruptCallback`;`TIM1_UP_IRQHandler` 调 `Tim1Callback100Hz(); return;`(**不进 `HAL_TIM_IRQHandler`**);`TIM4_IRQHandler` 调 `Tim4Callback20kHz(); return;`;`TIM3_IRQHandler` 和 `EXTI9_5_IRQHandler` 都是直接 `return`(**功能禁用**);`USART1_IRQHandler` 手工实现 **IDLE 空闲帧收包**:检测 `UART_FLAG_IDLE` → `HAL_UART_DMAStop` → 用 `__HAL_DMA_GET_COUNTER` 算出 `rxLen = BUFFER_SIZE - temp` → `OnRecvEnd(rx_buffer, rxLen)` → `memset` 清零 → 重启 `HAL_UART_Receive_DMA`;`HardFault/MemManage/BusFault/UsageFault/NMI_Handler` 全是死循环(**无故障信息输出**) |
 | `Core/Src/tim.c` | 四个定时器配置 | `htim1`:PSC=**71**、ARR=**9999** → 72M/72/10000 = **100Hz**(基本定时,NVIC prio **5**)。`htim2`:PSC=**0**、ARR=**1023**、PWM1 模式、CH3+CH4 → **70.3kHz 10 位 PWM**,`MX_TIM2_Init` 末尾直接 `HAL_TIM_PWM_Start(CH3/CH4)`;MspPostInit 配 **PB10=TIM2_CH3(B 相 PWM)、PB11=TIM2_CH4(A 相 PWM)** 并调 `__HAL_AFIO_REMAP_TIM2_PARTIAL_2()`。`htim3`:PSC=71、ARR=65535、**输入捕获 CH1 = PA6**、`TIM_SLAVEMODE_RESET` + `TIM_TS_TI1FP1`(预留的 STEP 脉冲测周,NVIC prio 0,但 ISR 被 return 掉)。`htim4`:PSC=**71**、ARR=**49** → 72M/72/50 = **20kHz**(**闭环控制环时基**,NVIC prio **0**) |
-| `Core/Src/can.c` | CAN 外设 + 收发回调 | `hcan.Init.Prescaler = 4`、`SJW_1TQ`、`BS1 = 5TQ`、`BS2 = 3TQ` → 36MHz/(4×(1+5+3)) = **1 Mbps**;`Mode = CAN_MODE_NORMAL`、`AutoBusOff = DISABLE`、`AutoWakeUp = ENABLE`、**`AutoRetransmission = DISABLE`**(发失败不重传);过滤器 FilterBank 0 全 0 掩码 = **接收所有帧**,FIFO0;`HAL_CAN_Start` + `HAL_CAN_ActivateNotification(几乎全部中断)`;引脚 **PB8=CAN_RX、PB9=CAN_TX** + `__HAL_AFIO_REMAP_CAN1_2()`;NVIC prio **3**。`CAN_Send(pHeader, data)` 包装 `HAL_CAN_AddTxMessage`,**失败直接 `Error_Handler()` 死机**。`HAL_CAN_RxFifo0MsgPendingCallback`:`id = StdId >> 7`、`cmd = StdId & 0x7F`,**`id == 0`(广播)或 `id == canNodeId` 时**调 `OnCanCmd(cmd, RxData, RxHeader.DLC)` |
+| `Core/Src/can.c` | CAN 外设 + 收发回调 | `hcan.Init.Prescaler = 4`、`SJW_1TQ`、`BS1 = 5TQ`、`BS2 = 3TQ` → 36MHz/(4×(1+5+3)) = **1 Mbps**;`Mode = CAN_MODE_NORMAL`、`AutoBusOff = DISABLE`、`AutoWakeUp = ENABLE`、**`AutoRetransmission = DISABLE`**(发失败不重传);过滤器 FilterBank 0 全 0 掩码 = **接收所有帧**,FIFO0;`HAL_CAN_Start` + `HAL_CAN_ActivateNotification(几乎全部中断)`;引脚 **PB8=CAN_RX、PB9=CAN_TX** + `__HAL_AFIO_REMAP_CAN1_2()`;NVIC prio **3**。`CAN_Send(pHeader, data)` 包装 `HAL_CAN_AddTxMessage`,**2026-11-02 已改**:先自旋等空邮箱(`CAN_TX_SPIN_LIMIT = 2000`)再发,失败则 `canTxDropCount++` 丢帧(原来是直接 `Error_Handler()` 死机)。`HAL_CAN_RxFifo0MsgPendingCallback`:取帧失败时 `canRxErrorCount++` 并 `return`(原为 `Error_Handler()`);`id = StdId >> 7`、`cmd = StdId & 0x7F`,**`id == 0`(广播)或 `id == canNodeId` 时**调 `OnCanCmd(cmd, RxData, RxHeader.DLC)` |
 | `Core/Src/spi.c` | MT6816 的 SPI1 | `SPI_MODE_MASTER`、`DATASIZE_**16BIT**`、`CLKPolarity = **HIGH**` + `CLKPhase = **2EDGE**`(**SPI Mode 3**)、`NSS_SOFT`、`BAUDRATEPRESCALER_8` → 72M/8 = **9 MHz**、`FIRSTBIT_MSB`;引脚 **PB3=SCK、PB4=MISO、PB5=MOSI**(片选 PA15 在 `gpio.c` 里单独配) |
 | `Core/Src/adc.c` | 电压/温度采样 + NTC 换算 | `ScanConvMode = ENABLE`、`ContinuousConvMode = ENABLE`、`NbrOfConversion = 2`、`SamplingTime = 239.5 CYCLES`;通道 **ADC_CHANNEL_0 = PA0 = `POWER_U_Pin`(母线电压)**、**ADC_CHANNEL_1 = PA1 = `DRV_TEMP_Pin`(NTC)**;DMA1_Channel1 **循环**搬到 `uint16_t whole_adc_data[2][12]`(**只用了前 2 个元素,数组开得过大**);`HAL_ADCEx_Calibration_Start` 后 `HAL_ADC_Start_DMA(..., 2)`。`float AdcGetChipTemperature()` 用 **Beta 方程**换算 NTC:`BALANCE_RESISTOR = 3300.0`、`MAX_ADC = 4095.0`、`BETA = 3455.0`、`ROOM_TEMP = 298.15K`、`RESISTOR_ROOM_TEMP = 10000.0`;`rThermistor = 3300*(4095/adc - 1)`,`tKelvin = (BETA*298.15)/(BETA + 298.15*ln(R/10000))`,返回 `tKelvin - 273.15`。**函数名叫 "ChipTemperature" 但读的是外部 NTC(驱动级温度),不是 MCU 内部温度传感器 —— 命名误导**;母线电压 `whole_adc_data[0][0]` **采了但从未被使用** |
 | `Core/Src/usart.c` | 调试串口 | `huart1.Init.BaudRate = **115200**`;`__HAL_UART_ENABLE_IT(&huart1, UART_IT_IDLE)`;`RetargetInit(&huart1)`(接 printf);**`Uart_SetRxCpltCallBack(OnUartCmd)`** —— 把 `UserApp/protocols/interface_uart.cpp` 的解析函数挂到 `OnRecvEnd` 函数指针;`HAL_UART_Receive_DMA(&huart1, rx_buffer, 128)` 开 DMA 收;DMA1_Channel5=RX、Channel4=TX,均 `DMA_NORMAL` |
@@ -1386,26 +1386,25 @@ integral += acc;  value += integral / CONTROL_FREQUENCY;  integral %= CONTROL_FR
 1. **`0x06` 的 `[4]` 字节语义冲突**:`[4:8]` 是 `time` 的 4 字节 float,而 `if (_data[4])` 又把它的最低字节当 ACK 开关 —— 对大多数非 0 的 time 值 ACK 会被意外触发。
 2. **应答复用请求缓冲**:所有应答都把结果写回**传进来的 `_data`(即全局 `RxData[8]`)**再发送,下一帧到来会覆盖;同时 `_data` 的 `[5..7]` 字节保留的是请求里的脏数据(只有 `0x25` 显式清 0)。
 3. **`0x03/0x04/0x05` 读的是全局 `RxData` 而不是形参 `_data`** —— 当前两者是同一块内存,但一旦改成多缓冲就会出 bug。
-4. **`AutoRetransmission = DISABLE` + `CAN_Send` 失败即 `Error_Handler()` 死循环**:总线繁忙或无 ACK(例如主控没上电/终端电阻缺失)时,一次发送失败就会让关节板**永久卡死在 `__disable_irq()` 的空循环里**,表现为"电机突然失控/掉线",必须断电重启。
+4. **`AutoRetransmission = DISABLE`** —— 发失败不重传。原先配合"`CAN_Send` 失败即 `Error_Handler()` 死循环"会让关节板永久卡死(表现为"电机突然失控/掉线"),该死锁**已于 2026-11-02 修复**,现在失败只丢帧并计数。但 `AutoBusOff = DISABLE` 且无 bus-off 软件恢复逻辑,进了 bus-off 仍会一直发不出去。
 5. 命令码 `0x00`、`0x08~0x10`、`0x1C~0x20`、`0x26~0x7C` 均落到 `default: break`,静默忽略。
 
 ---
 
 ### 42 与 35 固件的差异
 
-`diff -rq` 实测:两棵源码树里**只有 5 个文件内容不同**(另有若干 IDE 元数据只在 42 侧存在)。`Ctrl/Motor/`、`Ctrl/Driver/`、`Core/Src/*`、`Port/*`、`STM32F103CBTx_FLASH.ld`、`CMakeLists.txt`、`stlink.cfg`、`startup/` **全部逐字节相同**。
+`diff -rq` 实测(2026-11-02 之后):两棵源码树里**只有 2 个文件内容不同** —— `UserApp/main.cpp` 和 `Ctrl/Sensor/Encoder/mt6816_base.h`(另有若干 IDE 元数据只在 42 侧存在)。`Ctrl/Motor/`、`Ctrl/Driver/`、`Core/Src/*`(含同步修过的 `can.c`)、`Core/Inc/*`(含 `can.h`)、`Port/*`、`STM32F103CBTx_FLASH.ld`、`CMakeLists.txt`、`stlink.cfg`、`startup/` **全部逐字节相同**。
+
+> 原先还有 3 处 `stdint-gcc.h` 头文件差异,2026-11-02 把 35 侧也改成 `<stdint.h>` 后已消失。
 
 | 文件 | 42 | 35 | 性质 |
 |---|---|---|---|
 | `UserApp/main.cpp` | `.dce_kp = 200` | `.dce_kp = **195**` | **唯一的功能性差异**:35 电机的位置环比例增益略低(约 -2.5%)。其余 `dce_kv=80 / ki=300 / kd=250`、电流限制 1000mA、标定电流 2000mA、速度限 30 r/s、加速度 100 r/s² **完全相同** |
 | `UserApp/main.cpp` | 文件末尾**无换行符** | 末尾有换行符 | 纯格式 |
-| `UserApp/common_inc.h` | `#include <stdint.h>` | `#include "stdint-gcc.h"` | 编译期兼容性改动(见下) |
-| `UserApp/configurations.h` | `#include <stdint.h>` | `#include "stdint-gcc.h"` | 同上 |
-| `Port/Platform/Utils/st_hardware.h` | `#include <stdint.h>` | `#include <stdint-gcc.h>` | 同上 |
 | `Ctrl/Sensor/Encoder/mt6816_base.h` | `virtual void SpiInit() = 0;`<br>`virtual uint16_t SpiTransmitAndRead16Bits(uint16_t) = 0;` | 两者都是**空实现 `{}`** | 42 改成了**纯虚函数**(更严格,漏实现会编译报错);35 的 `uint16_t ... {}` 是**无返回值的非 void 函数,是 UB,现代 GCC 会报 `-Wreturn-type` 警告**。42 的写法更正确 |
 | 只在 42 侧存在 | `.cproject`、`.project`、`.mxproject`、`.gitignore`、`.idea/` | — | IDE/CubeMX 元数据 |
 
-**关于 `stdint-gcc.h` → `stdint.h`**:文件时间戳显示 42 侧这 4 个文件是 **2026-09-06 本地修改**的(35 侧仍是原始的 2023-12-26)。`stdint-gcc.h` 是 ARM-GCC 自带的私有头,在新版 arm-none-eabi 工具链里引入方式变了,改成标准 `<stdint.h>` 才能编过。**结论:42 固件被本地修补过以便在当前工具链构建(`<V2>/2.Firmware/build/motor42-baseline/` 就是它的产物);35 固件保持上游原样,用新工具链很可能编不过。**
+**关于 `stdint-gcc.h` → `stdint.h`(已不再是差异项)**:42 侧 4 个文件于 **2026-09-06** 本地修改,35 侧 3 个 `stdint-gcc.h` 于 **2026-11-02** 跟上。`stdint-gcc.h` 是 GCC 自带的私有头,当前 `arm-none-eabi-gcc 10.3.1` 的三个 include 搜索路径都不提供它(全机只有 x86_64 宿主 GCC 带),必须换成标准 `<stdint.h>` 才能编过。**结论:42 与 35 现在都能在本机工具链下构建**,产物分别在 `<V2>/2.Firmware/build/motor42-baseline/` 与 `build/motor35-baseline/`。**升级上游时这几处需要重放。**
 
 **意外发现(与直觉相反)**:
 - **42 和 35 的减速比、编码器标定值、引脚映射、CAN ID 分配、电流/电压参数、细分数、控制环频率全部相同** —— 两份固件实质上是同一份代码,只差一个 `dce_kp`。减速比并不在电机固件里,而是在**主控**侧:`dummy-ref-core-fw/Robot/actuators/ctrl_step/ctrl_step.cpp` 的 `CtrlStepMotor` 构造参数 `reduction`。所以问"42 和 35 的减速比"要去主控固件找,本固件里没有。
@@ -1414,14 +1413,32 @@ integral += acc;  value += integral / CONTROL_FREQUENCY;  integral %= CONTROL_FR
 
 ---
 
-### `<V2>/2.Firmware/build/motor42-baseline/` 目录
+### `<V2>/2.Firmware/build/` 目录(三块板的基线构建产物)
 
-42 固件的一次**已完成的本地基线构建**产物(CMake + Make,非 git 跟踪内容)。
+三份**已完成的本地基线构建**产物,均为 `CMAKE_BUILD_TYPE=Debug`(`-Og -g`):
+
+| 目录 | 源 | FLASH | RAM | 其他 |
+|---|---|---|---|---|
+| `motor42-baseline/` | `dummy-42motor-fw` | 74 540 B / 128 KB(56.9%) | 7 760 B / 20 KB(37.9%) | 到标定区余 22.2 KB |
+| `motor35-baseline/` | `dummy-35motor-fw` | 74 548 B / 128 KB(56.9%) | 7 760 B / 20 KB(37.9%) | 同上 |
+| `ref-baseline/` | `dummy-ref-core-fw` | 255 580 B / 1 MB(24.4%) | 45 776 B / 128 KB(34.9%) | **CCMRAM 65 536 B / 64 KB = 100%,零余量** |
+
+构建命令(路径含空格与中文,引号必须加;编译目录放在源码树外,因为 `CMakeLists.txt` 用 `file(GLOB_RECURSE "Core/*.*" ...)` 收源文件):
+
+```bash
+cd "<V2>/2.Firmware/dummy-35motor-fw"
+cmake -B ../build/motor35-baseline -DCMAKE_BUILD_TYPE=Debug
+cmake --build ../build/motor35-baseline -j$(nproc)
+```
+
+⚠️ `dummy-ref-core-fw/cmake-build-debug/` 是 2025-02-24 的残留 configure,**没有任何产物,别在那里构建**。
+
+下表以 42 为例逐文件说明(35 / ref 结构相同,仅目标名不同:`Ctrl-Step-STM32-fw` / `Core-STM32F4-fw`)。
 
 | 文件 | 作用 | 关键要点 |
 |---|---|---|
 | `<V2>/2.Firmware/build/motor42-baseline/CMakeCache.txt` | CMake 配置缓存 | **`CMAKE_BUILD_TYPE:STRING=Debug`**(即 `-Og -g`,**不是 Release**);`CMAKE_HOME_DIRECTORY = .../dummy-42motor-fw` —— 确认源是 42 而非 35 |
-| `<V2>/2.Firmware/build/motor42-baseline/Ctrl-Step-STM32-fw.bin` | 裸二进制 | **74,436 字节(约 73KB)**。Flash 128K,标定区从 0x08017C00(偏移 95K)开始 → **当前还有约 22KB 余量**,未与标定区冲突 |
+| `<V2>/2.Firmware/build/motor42-baseline/Ctrl-Step-STM32-fw.bin` | 裸二进制 | **74,540 字节(约 72.8KB)**。Flash 128K,标定区从 0x08017C00(偏移 97,280 B = 95KB)开始 → **当前还有 22,740 B(22.2KB)余量**,未与标定区冲突 |
 | `<V2>/2.Firmware/build/motor42-baseline/Ctrl-Step-STM32-fw.hex` | Intel HEX,烧写用 | 209KB |
 | `<V2>/2.Firmware/build/motor42-baseline/Ctrl-Step-STM32-fw.elf` | 带调试符号的 ELF | 1.26MB,配合 OpenOCD/gdb 调试用 |
 | `<V2>/2.Firmware/build/motor42-baseline/Ctrl-Step-STM32-fw.map` | 链接映射 | 590KB。`Memory region` 段确认 `RAM 0x20000000 len 0x5000`(20K)、`FLASH 0x08000000 len 0x20000`(128K)。查某个符号占多少 Flash/RAM 来这里 |
@@ -1488,8 +1505,8 @@ integral += acc;  value += integral / CONTROL_FREQUENCY;  integral %= CONTROL_FR
 | 梯形加减速怎么实现的?有 S 曲线吗? | `dummy-42motor-fw/Ctrl/Motor/motion_planner.cpp`(梯形,无 S 曲线;`PositionTracker::CalcSoftGoal` 的刹车距离判据) |
 | 温度是怎么测的?为什么读回来是 0? | `dummy-42motor-fw/Core/Src/adc.c`(`AdcGetChipTemperature()`,NTC Beta 方程,PA1)+ `UserApp/main.cpp`(100Hz 回调里 1s 采一次,受 `enableTempWatch` 控制,启动时被强制置 false,需 CAN `0x7d` 打开) |
 | 串口调试命令有哪些?波特率?printf 输出到哪? | `dummy-42motor-fw/UserApp/protocols/interface_uart.cpp`(`c`/`v`/`p` 三条)+ `Core/Src/usart.c`(115200,IDLE+DMA 收包)+ `Port/Platform/retarget.c`(`_write` → `HAL_UART_Transmit`) |
-| 怎么编译/烧写?用什么工具链?Flash 还剩多少? | `dummy-42motor-fw/CMakeLists.txt`、`STM32F103CBTx_FLASH.ld`、`stlink.cfg`;基线产物与余量看 `<V2>/2.Firmware/build/motor42-baseline/`(Debug 构建 73KB / 128K) |
-| 42 和 35 固件到底差在哪? | 只差 `UserApp/main.cpp` 的 `dce_kp`(200 vs 195)+ 3 处 `stdint-gcc.h` 头文件 + `Ctrl/Sensor/Encoder/mt6816_base.h` 的纯虚声明。详见本文「42 与 35 固件的差异」一节 |
+| 怎么编译/烧写?用什么工具链?Flash 还剩多少? | `dummy-42motor-fw/CMakeLists.txt`、`STM32F103CBTx_FLASH.ld`、`stlink.cfg`;基线产物与余量看 `<V2>/2.Firmware/build/`(三块板都有,Debug 构建;电机板 74.5KB / 128K) |
+| 42 和 35 固件到底差在哪? | 2026-11-02 后**只差 2 个文件**:`UserApp/main.cpp` 的 `dce_kp`(200 vs 195)+ `Ctrl/Sensor/Encoder/mt6816_base.h` 的纯虚声明。原先那 3 处 `stdint-gcc.h` 差异已消除。详见本文「42 与 35 固件的差异」一节 |
 | 减速比在哪里配置? | **不在电机固件里**,在主控 `dummy-ref-core-fw/Robot/actuators/ctrl_step/ctrl_step.cpp` 的 `CtrlStepMotor` 构造参数 `reduction` |
 | 想看带中文注释的运动学 / CAN 客户端 / 闭环代码 | `Dummy 源码注释/`(6dof_kinematic、dummy_robot、ctrl_step、main 来自主控;motor.cpp 来自 42 电机固件)。注意其中 `main.cpp`、`6dof_kinematic.cpp`、`motor.cpp` 语法已被破坏,只能读不能编译 |
 
@@ -2247,9 +2264,9 @@ dummy0.robot.tuning.set_tuning_freq_amp(...) / .set_tuning_flag(...)
 
 | 本地固件 | 对 auk 的比对结果 | 判读 |
 |---|---|---|
-| `dummy-42motor-fw` | 141 个文件中 **137 个 blob 哈希完全相同**,4 个不同 | **= auk**,4 处差异是你自己的 Linux 编译适配 |
-| `dummy-35motor-fw` | 137 个文件 **全部相同,零差异** | **= auk**。`master` 分支根本没有 35motor 目录,反向印证 baseline 是 auk |
-| `dummy-ref-core-fw` | 对 auk:137 个不同;对 `master`:**仅 5 个**不同 | **= master + 手工打上 auk 的 RGB 功能**,见下 |
+| `dummy-42motor-fw` | 141 个文件中 **137 个 blob 哈希完全相同**,4 个不同 | **= auk**,4 处差异是你自己的 Linux 编译适配(2026-11-02 又加了 `Core/Src/can.c`、`Core/Inc/can.h` 的死锁修复,共 6 处) |
+| `dummy-35motor-fw` | 137 个文件 **全部相同,零差异** | **= auk**。`master` 分支根本没有 35motor 目录,反向印证 baseline 是 auk。(2026-11-02 起有 5 处本地改动:3 个 `stdint-gcc.h` + `can.c` + `can.h`) |
+| `dummy-ref-core-fw` | 对 auk:137 个不同;对 `master`:**仅 5 个**不同 | **= master + 手工打上 auk 的 RGB 功能**,见下。(2026-11-02 起另有 3 处本地改动:`Bsp/imu/` 的 `mpu6050.hpp` → `MPU6050.hpp`) |
 
 **42motor 的 4 处差异(你的改动,非上游)**:
 
@@ -2259,8 +2276,9 @@ dummy0.robot.tuning.set_tuning_freq_amp(...) / .set_tuning_flag(...)
 | `UserApp/common_inc.h` | 同上 |
 | `Port/Platform/Utils/st_hardware.h` | 同上 |
 | `Ctrl/Sensor/Encoder/mt6816_base.h` | `virtual void SpiInit() {}` → `= 0`;`SpiTransmitAndRead16Bits` 同样改纯虚 |
+| `Core/Src/can.c`、`Core/Inc/can.h` | **2026-11-02 新增**:`CAN_Send` / 接收回调不再调 `Error_Handler()` 死锁,改为丢帧计数。见「五、已知坑」第 14 条 |
 
-> 前三条是 ARM GCC 私有头换标准头,第四条是修"非 void 函数无返回值"。这 4 处是 Linux 下编译通过的必要条件,**升级上游时需要重放**。
+> 前三条是 ARM GCC 私有头换标准头,第四条是修"非 void 函数无返回值"。这 4 处是 Linux 下编译通过的必要条件。最后一条是运行期缺陷修复,与编译无关。**升级上游时这些都需要重放。**
 
 **ref-core 的特殊情况**:本地那份含 auk 独有的 `Bsp/gpio/rgb.cpp`、`rgb.hpp`、`usb-fs.tar.gz`,`dummy_robot.cpp` 里也有 `SetRGBMode`/`GetRGBEnabled`,但**与 auk 的 137 个差异中 117 个是纯 CRLF↔LF**(auk 做过一次 FreeRTOS 全量换行符转换),剩 20 个是 CubeMX 生成的 `Core/`。其中一处真实不一致:**本地 `Core/Inc/main.h` 缺 `RGB_Pin`(PA3)/`RGB_GPIO_Port` 定义**,即 RGB 应用层代码搬来了但 `.ioc` 没重新生成。全工程无人引用这两个宏,**编译不会断**,但将来真要点亮 LED Ring 时 PA3 没配成输出。
 
