@@ -20,3 +20,9 @@ source/dummy2/
 
 # SolidWorks / Office 临时锁文件（软件打开文档时自动生成，关闭后残留）
 ~$*
+
+# 固件构建目录的中间产物（只保留 .elf/.hex/.bin/.map 四个产物本体）
+source/1.Dummy V2任同学整理/2.Firmware/build/*/CMakeFiles/
+source/1.Dummy V2任同学整理/2.Firmware/build/*/CMakeCache.txt
+source/1.Dummy V2任同学整理/2.Firmware/build/*/cmake_install.cmake
+source/1.Dummy V2任同学整理/2.Firmware/build/*/Makefile
