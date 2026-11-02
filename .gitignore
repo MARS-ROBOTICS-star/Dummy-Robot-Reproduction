@@ -17,3 +17,6 @@ __Previews/
 
 # 失败的 gitee 克隆残留：只有 .git 骨架，零对象、无工作区文件
 source/dummy2/
+
+# SolidWorks / Office 临时锁文件（软件打开文档时自动生成，关闭后残留）
+~$*
