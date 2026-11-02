@@ -20,11 +20,11 @@
 
 ## 项目现状(2026-11-02)
 
-**硬件**:7 块板(42×3、35×3、REF×1)已焊完,断电与上电测试全部通过。42-3 的 STM32 和 CAN 芯片 U5 被 24 V 事故打坏,等备件。详见 `notes/七块板测试记录.md`。
+**硬件**:7 块板(42×3、35×3、REF×1)已焊完,断电与上电测试全部通过。42-3 的 STM32 和 CAN 芯片 U5 被 24 V 事故打坏,等备件。REF 的 Type-C 座 J1 已换;REF 的 CAN 芯片 U11 接收输出坏了(第 4 脚临时翘起,USB 才能起来),等备件。详见 `notes/七块板测试记录.md`。
 
 **固件**:42 / 35 / REF 三份固件都已能在 Linux + `arm-none-eabi-gcc 10.3.1` 下编译,产物在 `<V2>/2.Firmware/build/{motor42,motor35,ref}-baseline/`。编译方法与 Linux 适配改动见 `notes/七块板测试记录.md` 一·四。
 
-**烧录**:42-1、42-2 已烧(但是 CAN 死锁修复**之前**的版本,需重烧);35×3 与 REF 待烧。工具是 Windows 侧的 STM32CubeProgrammer,本机 Linux 没装烧录工具。
+**烧录**:42-1、42-2 已烧(但是 CAN 死锁修复**之前**的版本,需重烧);35×3 与 REF 已烧。REF 需重烧注释掉 `dummy.Init()` 的新固件(见测试记录一·四c)。REF 开机卡死先用 CubeProgrammer Hot plug 读 PC/LR 定位,别猜。工具是 Windows 侧的 STM32CubeProgrammer,本机 Linux 没装烧录工具。
 
 **已修的固件缺陷**:电机板 `can.c` 的 `CAN_Send` / 接收回调失败即死锁(2026-11-02,42 与 35 同步)。遗留 `AutoBusOff = DISABLE` 无 bus-off 恢复逻辑。
 
